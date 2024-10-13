@@ -3,12 +3,45 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "backend#build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "apps/backend/dist/**"
+      ]
+    },
+    "backend#prisma:generate": {
+      "cache": false,
+      "outputs": []
+    },
+    "backend#prisma:migrate": {
+      "cache": false,
+      "outputs": []
+    },
+    "backend#prisma:seed": {
+      "cache": false,
+      "outputs": []
+    },
+    "frontend#build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "apps/frontend/.next/**"
+      ]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": [
+        "^lint"
+      ]
     },
     "dev": {
       "cache": false,
