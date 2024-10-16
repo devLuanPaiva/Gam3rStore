@@ -87,4 +87,10 @@ describe("Cart", () => {
 
     expect(cart.totalPrice).toBe(product1.promotionalPrice + product2.promotionalPrice);
   })
+  it('Should return correct full price of items in the cart', () =>{
+    cart = cart.addItem(product1);
+    cart = cart.addItem(product2);
+
+    expect(cart.fullPrice).toBe(product1.basePrice + product2.basePrice);
+  })
 });
