@@ -96,7 +96,7 @@ describe("Cart", () => {
   it('Should clear the cart', () =>{
     cart = cart.addItem(product1);
     cart = cart.addItem(product2);
-    cart.clear();
+    cart = cart.clear();
 
     expect(cart.items.length).toBe(0);
   })
