@@ -68,4 +68,17 @@ describe("Cart", () => {
     expect(cart.items.length).toBe(1);
     expect(cart.items[0]!.quantity).toBe(2);
   })
+  it('Should remove an item from the cart',() =>{
+    cart = cart.addItem(product1);
+    cart = cart.addItem(product2);
+    expect(cart.items.length).toBe(2);
+
+    cart = cart.removeItem(product1);
+    expect(cart.items.length).toBe(1);
+    expect(cart.items[0]!.product).toBe(product2);
+    expect(cart.items[0]!.quantity).toBe(1);
+    
+    cart = cart.removeItem(product2);
+    expect(cart.items.length).toBe(0);
+  })
 });
