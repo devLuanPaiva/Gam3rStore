@@ -93,4 +93,11 @@ describe("Cart", () => {
 
     expect(cart.fullPrice).toBe(product1.basePrice + product2.basePrice);
   })
+  it('Should clear the cart', () =>{
+    cart = cart.addItem(product1);
+    cart = cart.addItem(product2);
+    cart.clear();
+
+    expect(cart.items.length).toBe(0);
+  })
 });
