@@ -61,6 +61,10 @@ describe("FilterProducts", () => {
       },
     ];
   });
+  it("should return all products if the search term is empty", () => {
+    const result = filterProducts.execute("", products);
+    expect(result.length).toBe(2);
+  });
   it("Should return products matching the search term by name", () => {
     const result = filterProducts.execute("Playstation", products);
     expect(result.length).toBe(1);
