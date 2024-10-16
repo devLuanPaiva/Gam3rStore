@@ -81,4 +81,10 @@ describe("Cart", () => {
     cart = cart.removeItem(product2);
     expect(cart.items.length).toBe(0);
   })
+  it('Should return correct total price of items in the cart', () =>{
+    cart = cart.addItem(product1);
+    cart = cart.addItem(product2);
+
+    expect(cart.totalPrice).toBe(product1.promotionalPrice + product2.promotionalPrice);
+  })
 });
