@@ -61,9 +61,14 @@ describe("FilterProducts", () => {
       },
     ];
   });
-  it('Should return products matching the search term by name', () => {
+  it("Should return products matching the search term by name", () => {
     const result = filterProducts.execute("Playstation", products);
     expect(result.length).toBe(1);
     expect(result[0]!.name).toBe("Sony PlayStation 5 Slim");
+  });
+  it("should return products matching the search term by description", () => {
+    const result = filterProducts.execute("gráficos de nova geração", products);
+    expect(result.length).toBe(1);
+    expect(result[0]!.description).toContain("gráficos de nova geração");
   });
 });
