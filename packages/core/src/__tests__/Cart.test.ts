@@ -62,4 +62,10 @@ describe("Cart", () => {
     expect(cart.items[0]!.product).toBe(product1);
     expect(cart.items[0]!.quantity).toBe(1);
   })
+  it('Should increase quantity if the item already exists in the cart', () => {
+    cart = cart.addItem(product1);
+    cart = cart.addItem(product1);
+    expect(cart.items.length).toBe(1);
+    expect(cart.items[0]!.quantity).toBe(2);
+  })
 });
