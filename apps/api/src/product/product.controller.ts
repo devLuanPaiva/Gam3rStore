@@ -13,12 +13,12 @@ export class ProductController {
   getAll(): Promise<IProduct[]> {
     return this.repo.getProducts();
   }
-  @Get('get/:id')
+  @Get('getById/:id')
   getById(@Param('id') id: number): Promise<IProduct> {
-    return this.repo.getById(id);
+    return this.repo.getById(+id);
   }
   @Delete('delete/:id')
   deleteById(@Param('id') id: number): Promise<void> {
-    return this.repo.deleteById(id);
+    return this.repo.deleteById(+id);
   }
 }
