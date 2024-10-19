@@ -1,6 +1,6 @@
 import { IProduct } from '@gstore/core';
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/db/db.service';
+import { PrismaService } from '../db/db.service';
 
 @Injectable()
 export class ProductService {
