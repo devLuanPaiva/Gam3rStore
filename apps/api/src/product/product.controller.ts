@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { IProduct } from '@gstore/core';
 
-@Controller('products')
+@Controller('api/products')
 export class ProductController {
   constructor(private readonly repo: ProductService) {}
   @Post('create')
