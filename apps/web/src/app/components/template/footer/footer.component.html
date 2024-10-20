@@ -1,0 +1,45 @@
+<footer class="flex flex-col bg-black/30 text-zinc-400 mt-10">
+    <div
+        class="h-px bg-gradient-to-r from-violet-600/20 via-violet-600/80 to-violet-600/20"></div>
+    <section class="container flex flex-col py-10 gap-10">
+        <article
+            class="flex flex-col md:flex-row items-center md:items-start justify-between text-center md:text-left gap-5 md:gap-0">
+            <div class="flex flex-col gap-1">
+                <h3 class="text-2xl font-bold text-zinc-200 pb-2">Sobre</h3>
+                <p class="text-sm">Nossa História</p>
+                <p class="text-sm">Política de Privacidade</p>
+                <p class="text-sm">Termos de Uso</p>
+            </div>
+            <div class="flex flex-col gap-1">
+                <h3
+                    class="text-2xl font-bold text-zinc-200 pb-2">Contato
+                </h3>
+                <p class="text-sm">suporte&#64;gamer.store</p>
+                <div
+                    class="text-sm flex items-center gap-2 justify-center md:justify-start">
+                    <fa-icon [icon]="icons.whatsapp" />
+                    <p class="text-sm">+55 11 9999-9999</p>
+                </div>
+            </div>
+        </article>
+        <article
+            class="flex flex-col md:flex-row items-center gap-1.5 justify-between">
+            <div class="flex gap-2">
+                <fa-icon [icon]="icons.facebook" />
+                <fa-icon [icon]="icons.instagram" />
+                <fa-icon [icon]="icons.linkedin" />
+                <fa-icon [icon]="icons.youtube" />
+            </div>
+            <div
+                class="flex flex-col md:flex-row items-center gap-1.5 text-sm text-zinc-500">
+                <div class="flex gap-1.5">
+                    <p>Feito com</p>
+                    <p>❤️</p>
+                    <p>em {{ year }}</p>
+                </div>
+                <p class="hidden md:inline-block">-</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+        </article>
+    </section>
+</footer>
