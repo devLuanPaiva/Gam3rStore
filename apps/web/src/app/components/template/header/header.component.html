@@ -1,0 +1,13 @@
+<header class="flex flex-col h-20 px-5"
+    [ngStyle]="{ background: 'linear-gradient(90deg, #14002D 0%, #420093 50%, #14002D 100%)' }">
+    <section class="flex-1 container flex flex-col justify-center">
+        <div class="flex justify-between items-center">
+            <app-logo />
+            <a [routerLink]="['/checkout/cart']">
+                <app-cart-icon [amountItems]="amountItems" />
+            </a>
+        </div>
+    </section>
+    <div
+        class="h-px bg-gradient-to-r from-violet-600/20 via-violet-600/80 to-violet-600/20"></div>
+</header>

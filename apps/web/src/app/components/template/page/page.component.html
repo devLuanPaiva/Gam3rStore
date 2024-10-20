@@ -1,0 +1,9 @@
+<div class="flex flex-col min-h-screen" [ngStyle]="{ background: 'radial-gradient(50% 50% at 50% 50%, #2d0064 0%, #0d001c 100%)' }">
+    <div class="flex-1 flex flex-col w-screen" [ngStyle]="{ background: 'url(../../../../assets/background.png)' }">
+        <app-header *ngIf="!headerNone"/>
+        <main class=" flex-1 flex flex-col" [ngClass]="className">
+            <ng-content></ng-content>
+        </main>
+        <app-footer *ngIf="!footerNone"/>
+    </div>
+</div>
