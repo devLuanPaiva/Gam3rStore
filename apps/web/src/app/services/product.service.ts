@@ -15,7 +15,7 @@ export class ProductService {
 
   loadProducts(): void {
     this.apiService
-      .httpGet('/products/getAll')
+      .httpGet('products/getAll')
       .subscribe((products: IProduct[]) => {
         this.productsSubject.next(products ?? []);
       });

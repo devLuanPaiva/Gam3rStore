@@ -10,7 +10,7 @@ export class ApiService {
   private readonly urlBase = environment.apiUrl;
   constructor(private readonly http: HttpClient) {}
   httpGet(path: string): Observable<any> {
-    const url = path.startsWith('/') ? path : `/${path}`;
+    const url = path.startsWith('/') ? path : `${path}`;
     const urlComplete = `${this.urlBase}/${url}`;
 
     return this.http
