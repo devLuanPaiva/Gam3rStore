@@ -1,9 +1,9 @@
-<a [routerLink]="['/product', product.id]" class="flex text-white flex-col bg-[#0e001d] border border-white/10 rounded-xl relative max-w-[350px]">
+<a [routerLink]="['/product', product.id]" class="flex text-white flex-col bg-[#0e001d] border border-white/10 rounded-xl relative max-w-[350px] min-h-[456px]">
     <div class="absolute flex justify-end top-2.5 right-2.5">
         <p> {{product.rating}} </p>
     </div>
-    <figure class="w-full h-48 relative">
-        <img [src]="product.image" [alt]="product.name" class="object-contain"/>
+    <figure class="w-full h-48 relative flex items-center justify-center">
+        <img [src]="product.image" [alt]="product.name" class="object-contain max-w-full max-h-full"/>
     </figure>
     <section class="flex-1 flex flex-col gap-3 p-5 border-t border-white/10">
         <h2 class="text-lg font-semibold"> {{product.name}} </h2>
