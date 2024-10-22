@@ -38,4 +38,10 @@ describe('ProductController', () => {
     mockProductService.getProducts.mockResolvedValue(products);
     expect(await controller.getAll()).toBe(products);
   });
+
+  it('should return a product by id', async () => {
+    const product: IProduct | null = mockProducts[0];
+    mockProductService.getById.mockResolvedValue(product);
+    expect(await controller.getById(1)).toBe(product);
+  });
 });
