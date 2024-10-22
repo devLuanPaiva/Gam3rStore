@@ -40,4 +40,16 @@ describe('ListProductComponent', () => {
     );
     expect(productElements.length).toBe(2);
   });
+
+  it('should show the message "Nenhum produto encontrado" when there arent products', () => {
+    component.products = [];
+    fixture.detectChanges();
+
+    const noProductsMessage = fixture.debugElement.query(
+      By.css('p.text-center'),
+    );
+    expect(noProductsMessage.nativeElement.textContent).toContain(
+      'Nenhum produto encontrado.',
+    );
+  });
 });
