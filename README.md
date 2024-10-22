@@ -1,32 +1,45 @@
 # Gam3r Store 🕹️
 
-**Gam3r Store** é um projeto de e-commerce voltado para a venda de aparelhos eletrônicos. Atualmente, estamos na **primeira versão**, com o foco no desenvolvimento das regras de negócio essenciais. O objetivo é permitir que o usuário explore produtos, adicione ao carrinho, escolha a forma de pagamento e finalize sua compra com entrega.
+**Gam3r Store** é um projeto de e-commerce voltado para a venda de aparelhos eletrônicos. Atualmente, estamos na **Versão 1.0**, com o foco no desenvolvimento do backend e na listagem de produtos. O objetivo é permitir que o usuário explore produtos, adicione ao carrinho, escolha a forma de pagamento e finalize sua compra com entrega.
 
 ## 🚀 Visão Geral do Projeto
 
 - **Status**: Em desenvolvimento
-- **Versão Atual**: 0.1 (somente regras de negócio)
+- **Versão Atual**: 1.0
 - **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow
 
 ## 🔧 Funcionalidades Implementadas
 
-Até o momento, foram desenvolvidas e testadas as regras de negócio para:
-
+Até o momento, foram desenvolvidas e testadas:
+### Regras de Negócio:
 - **Produtos**: Criação e gestão de produtos.
 - **Carrinho**: Adicionar e remover itens do carrinho.
 - **Parcelamentos**: Definir e calcular diferentes formas de pagamento.
 - **Pedido**: Regras para finalizar a compra e definir os detalhes de envio.
 
+### Endpoins:
+- **Cadastrar Produto**: Cadastrar novo produto ao banco.
+- **Listar Produtos**: Listagem de todos os produtos cadastrados.
+- **Listar Produto por Id**: Retornar produto após busca por Id.
+- **Deletar Produto**: Deletar produto por Id.
+
+### Interfaces:
+- **Listar Produtos**: Listagem de todos os produtos, onde cada card contém o nome, estrelas, foto, preço e descrição.
+
+
 ### 🧪 Testes
 
-As funcionalidades implementadas foram testadas utilizando o framework **Jest**, com um total de **11 testes** aprovados até o momento.
+As funcionalidades implementadas foram testadas utilizando o framework **Jest**, com um total de **18 testes** aprovados até o momento, send:
+- **Core**: 11 testes para as regras de negócio
+- **Front-end**: 3 testes utilizando o BetTest em relação à listagem dos produtos.
+- **Backend**: 4 testes para todas as operações.
 
 ## 📦 Estrutura do Projeto
 
 O Gam3r Store está sendo desenvolvido utilizando uma arquitetura **monorepo**, facilitada pelo **Turborepo**, com as seguintes tecnologias:
 
 - **Frontend**: 
-  - Angular (planejado)
+  - Angular (em desenvolvimento)
 - **Mobile**
   - React Native (planejado)
 - **Backend**: 
@@ -36,23 +49,18 @@ O Gam3r Store está sendo desenvolvido utilizando uma arquitetura **monorepo**, 
 - **Testes**: Jest
 - **Linguagem**: TypeScript
 
-## 🛠 Desafios Enfrentados
-
-Atualmente, estou enfrentando desafios para realizar o **deploy** do projeto na **Vercel** devido à complexidade do **monorepo**. O projeto envolve múltiplas aplicações e pacotes, o que requer ajustes específicos para que a Vercel possa lidar com o monorepo adequadamente.
+## 🌐 Deploy
+A aplicação está disponivel na Vercel, podendo ser acessado em: [Gam3er]('https://game-api-beta.vercel.app')
 
 ## 💡 Próximos Passos
 
 ### Funcionalidades Planejadas
 
 - **Interface de Usuário (UI)**: Ainda não há interfaces criadas. Planejo desenvolver as seguintes funcionalidades:
-- **Listagem e Filtro de Produtos**: Exibir os produtos disponíveis e permitir filtrá-los por categoria, preço, etc.
+- **Filtro de Produtos**: Permitir filtrá-los por categoria, preço, etc.
 - **Detalhes do Produto**: Visualizar informações detalhadas de cada produto.
 - **Carrinho de Compras**: Adicionar e remover produtos do carrinho.
 - **Finalização de Compra**: Escolha da forma de pagamento e endereço de entrega.
-
-### Melhoria da Estrutura de Deploy
-
-- Configurar o deploy de forma eficiente para a Vercel ou explorar alternativas como **Netlify** para lidar melhor com a arquitetura monorepo.
 
 ## 📂 Como Executar o Projeto Localmente
 
