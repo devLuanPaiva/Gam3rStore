@@ -1,0 +1,7 @@
+<section *ngIf="products.length; else noProducts" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+<app-item-product *ngFor="let product of products" [product]="product"/>
+</section>
+
+<ng-template #noProducts>
+    <p class="text-center">Nenhum produto encontrado.</p>
+</ng-template>
