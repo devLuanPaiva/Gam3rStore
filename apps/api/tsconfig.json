@@ -10,6 +10,10 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "@gstore/core": ["../../packages/core"],
+      "@db/*": ["src/db/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
