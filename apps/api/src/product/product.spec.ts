@@ -44,4 +44,9 @@ describe('ProductController', () => {
     mockProductService.getById.mockResolvedValue(product);
     expect(await controller.getById(1)).toBe(product);
   });
+
+  it('should delete a product by id', async () => {
+    await controller.deleteById(1);
+    expect(mockProductService.deleteById).toHaveBeenCalledWith(1);
+  });
 });
