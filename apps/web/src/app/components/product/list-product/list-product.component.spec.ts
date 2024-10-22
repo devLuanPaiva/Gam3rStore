@@ -12,13 +12,13 @@ describe('ListProductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListProductComponent], 
+      imports: [ListProductComponent],
       providers: [
         { provide: ProductService, useClass: MockProductsService },
         {
           provide: ActivatedRoute,
           useValue: {
-            params: of({ id: '123' }) 
+            params: of({ id: '123' }),
           },
         },
       ],
@@ -31,5 +31,13 @@ describe('ListProductComponent', () => {
 
   it('should create a component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show the product list correctly', () => {
+    fixture.detectChanges();
+    const productElements = fixture.debugElement.queryAll(
+      By.css('app-item-product'),
+    );
+    expect(productElements.length).toBe(2);
   });
 });
