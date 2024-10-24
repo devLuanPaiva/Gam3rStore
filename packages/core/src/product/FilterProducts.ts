@@ -10,7 +10,9 @@ export default class FilterProducts {
                 ${Object.values(product.specifications).join(" ")}
                 ${product.brand}
             `.toLowerCase();
-      return words.every((word) => text.includes(word));
+      return words.every((word) =>
+        text.split(/\s+/).some((productWord) => productWord.startsWith(word))
+      );
     });
   }
 }
