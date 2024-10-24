@@ -1,0 +1,16 @@
+<section>
+    <form
+        class="flex gap-2 bg-[#0e001d] border border-white/20 rounded-full overflow-hidden {{className}}">
+        <input
+            type="search"
+            [ngModel]="search"
+            (ngModelChange)="setSearch($event)"
+            name="search"
+            [ngModelOptions]="{ standalone: true }"
+            placeholder="O que você procura?"
+            class="flex-1 bg-transparent outline-none px-6 py-3 text-white" />
+        <figure class="flex justify-center items-center bg-emerald-500 px-4">
+            <fa-icon [icon]="icons.search" class="text-white" />
+        </figure>
+    </form>
+</section>
