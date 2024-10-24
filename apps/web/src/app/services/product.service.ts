@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
 import { ApiService } from './api.service';
 import { FilterProducts, IProduct } from '@gstore/core';
 @Injectable({
@@ -21,16 +21,15 @@ export class ProductService {
       });
   }
   get products$(): Observable<IProduct[]> {
-    return this.productsSubject.asObservable().pipe(
-      map((products) => {
-        const search = this.searchSubject.getValue();
+    return combineLatest([this.productsSubject, this.searchSubject]).pipe(
+      map(([products, search]) => {
         if (!search) return products;
         return new FilterProducts().execute(search, products);
       }),
     );
   }
   setSearch(search: string): void {
-    this.searchSubject.asObservable();
+    this.searchSubject.next(search);
   }
   productById(id: number): IProduct | null {
     const products = this.productsSubject.getValue();
