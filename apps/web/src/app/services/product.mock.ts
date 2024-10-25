@@ -62,8 +62,11 @@ export const mockProducts: IProduct[] = [
 
 export class MockProductsService {
   products$ = of(mockProducts);
-
+  private searchValue: string = '';
   productById(id: number): IProduct | null {
     return mockProducts.find((product) => product.id === id) ?? null;
+  }
+  setSearch(value: string): void {
+    this.searchValue = value;
   }
 }
