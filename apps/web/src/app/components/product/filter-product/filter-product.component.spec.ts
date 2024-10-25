@@ -1,5 +1,3 @@
-import { of } from 'rxjs';
-import { FormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductService } from '../../../services/product.service';
 import { FilterProductComponent } from './filter-product.component';
@@ -27,6 +25,7 @@ describe('FilterProductComponent', () => {
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
   it('should set seach value correctly when setSeach it called', () => {
     const searchValue = 'notebook';
     component.setSearch(searchValue);
