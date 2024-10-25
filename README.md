@@ -1,12 +1,12 @@
 # Gam3r Store 🕹️
 
-**Gam3r Store** é um projeto de e-commerce voltado para a venda de aparelhos eletrônicos. Atualmente, estamos na **Versão 1.0**, com o foco no desenvolvimento do backend e na listagem de produtos. O objetivo é permitir que o usuário explore produtos, adicione ao carrinho, escolha a forma de pagamento e finalize sua compra com entrega.
+**Gam3r Store** é um projeto de e-commerce voltado para a venda de aparelhos eletrônicos. Atualmente, estamos na **Versão 1.1**, com o foco no desenvolvimento da filtragem de produtos. O objetivo é permitir que o usuário filtre produtos, buscando os mesmos pelo nome.
 
 ## 🚀 Visão Geral do Projeto
 
 - **Status**: Em desenvolvimento
-- **Versão Atual**: 1.0
-- **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow
+- **Versão Atual**: 1.1
+- **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma
 
 ## 🔧 Funcionalidades Implementadas
 
@@ -25,13 +25,13 @@ Até o momento, foram desenvolvidas e testadas:
 
 ### Interfaces:
 - **Listar Produtos**: Listagem de todos os produtos, onde cada card contém o nome, estrelas, foto, preço e descrição.
-
+- **Filtrar Produtos**: Friltragem de todos os produtos, onde o usuário insere o nome do produto no campo de busca e assim é filtrado.
 
 ### 🧪 Testes
 
-As funcionalidades implementadas foram testadas utilizando o framework **Jest**, com um total de **18 testes** aprovados até o momento, send:
+As funcionalidades implementadas foram testadas utilizando o framework **Jest**, com um total de **20 testes** aprovados até o momento, send:
 - **Core**: 11 testes para as regras de negócio
-- **Front-end**: 3 testes utilizando o BetTest em relação à listagem dos produtos.
+- **Front-end**: 5 testes utilizando o BetTest em relação à listagem dos produtos.
 - **Backend**: 4 testes para todas as operações.
 
 ## 📦 Estrutura do Projeto
@@ -50,14 +50,13 @@ O Gam3r Store está sendo desenvolvido utilizando uma arquitetura **monorepo**, 
 - **Linguagem**: TypeScript
 
 ## 🌐 Deploy
-A aplicação está disponivel na Vercel, podendo ser acessado em: [Gam3er]('https://game-api-beta.vercel.app')
+A aplicação está disponivel na Vercel, podendo ser acessado em: [Gam3er](https://game-api-beta.vercel.app)
 
 ## 💡 Próximos Passos
 
 ### Funcionalidades Planejadas
 
 - **Interface de Usuário (UI)**: Ainda não há interfaces criadas. Planejo desenvolver as seguintes funcionalidades:
-- **Filtro de Produtos**: Permitir filtrá-los por categoria, preço, etc.
 - **Detalhes do Produto**: Visualizar informações detalhadas de cada produto.
 - **Carrinho de Compras**: Adicionar e remover produtos do carrinho.
 - **Finalização de Compra**: Escolha da forma de pagamento e endereço de entrega.
