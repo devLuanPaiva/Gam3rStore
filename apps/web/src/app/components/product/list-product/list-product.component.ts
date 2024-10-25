@@ -7,6 +7,7 @@ import { ItemProductComponent } from '../item-product/item-product.component';
   selector: 'app-list-product',
   standalone: true,
   imports: [CommonModule, ItemProductComponent],
+  providers: [ProductService],
   templateUrl: './list-product.component.html',
 })
 export class ListProductComponent {
