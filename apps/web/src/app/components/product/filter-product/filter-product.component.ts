@@ -7,7 +7,6 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-filter-product',
   standalone: true,
   imports: [FontAwesomeModule, FormsModule],
-  providers: [ProductService],
   templateUrl: './filter-product.component.html',
 })
 export class FilterProductComponent {
