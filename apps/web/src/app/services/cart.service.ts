@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import {
@@ -13,6 +14,8 @@ import {
 })
 export class CartService {
   private cart: Cart = new Cart();
+  private cartItemsSubject = new BehaviorSubject<ICartItem[]>(this.cart.items);
+  cartItems$ = this.cartItemsSubject.asObservable();
   constructor(private readonly localStorageService: LocalStorageService) {
     this.loadCart();
   }
@@ -53,10 +56,12 @@ export class CartService {
     const savedItems = this.localStorageService.getItem<ICartItem[]>('cart');
     if (savedItems) {
       this.cart = new Cart(savedItems);
+      this.cartItemsSubject.next(this.cart.items);
     }
   }
   private updateCart(cart: Cart): void {
-    this.localStorageService.saveItem('cart', this.cart.items);
     this.cart = cart;
+    this.localStorageService.saveItem('cart', this.cart.items);
+    this.cartItemsSubject.next(this.cart.items);
   }
 }
