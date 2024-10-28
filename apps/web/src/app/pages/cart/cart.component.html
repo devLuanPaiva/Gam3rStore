@@ -1,0 +1,13 @@
+<section class="flex-1 flex flex-col space-y-4 pt-4 container items-center">
+    <ul class="flex flex-col gap-4">
+        <li *ngFor="let item of items; trackBy: trackByProductId">
+          <app-item-cart
+            [item]="item"
+            [addItem]="addItemToCart.bind(this, item.product)"
+            [removeItem]="removeItemFromCart.bind(this, item.product)"
+            [removeProduct]="removeProductFromCart.bind(this, item.product)">
+          </app-item-cart>
+        </li>
+      </ul>
+    <p *ngIf="items.length === 0">No items found.</p>
+</section>
