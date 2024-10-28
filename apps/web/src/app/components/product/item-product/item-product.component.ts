@@ -19,7 +19,6 @@ export class ItemProductComponent {
   };
   constructor(private readonly cartService: CartService) {}
   addToCart(product: IProduct) {
-    console.log('Adding product to cart: ', product);
     this.cartService.addItem(product);
   }
 }
