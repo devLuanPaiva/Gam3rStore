@@ -14,7 +14,7 @@ import {
 })
 export class CartService {
   private cart: Cart = new Cart();
-  private cartItemsSubject = new BehaviorSubject<ICartItem[]>(this.cart.items);
+  private readonly cartItemsSubject = new BehaviorSubject<ICartItem[]>(this.cart.items);
   cartItems$ = this.cartItemsSubject.asObservable();
   constructor(private readonly localStorageService: LocalStorageService) {
     this.loadCart();
