@@ -1,0 +1,12 @@
+<section class="flex justify-end items-center gap-7 bg-[#0e001d] h-24 rounded-xl px-7 ">
+    <div class="flex flex-col">
+        <h3 class="text-zinc-400">Total ({{itemCount}} {{itemCount === 1 ? 'item': 'items'}}):</h3>
+        <p class="text-emerald-500 text-2xl font-semibold">
+            {{totalPrice | currency: 'BRL'}}
+        </p>
+    </div>
+    <a  routerLink="/checkout/payment" class="button bg-indigo-700 flex items-center gap-2">
+        <fa-icon [icon]="faShoppingCart" size="lg"/>
+        <span>Continuar</span>
+      </a>
+</section>
