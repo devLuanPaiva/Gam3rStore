@@ -4,11 +4,17 @@ import { CartService } from '../../services/cart.service';
 import { ItemCartComponent } from '../../components/cart/item-cart/item-cart.component';
 import { CommonModule } from '@angular/common';
 import { EmptyCartComponent } from '../../components/cart/empty-cart/empty-cart.component';
+import { CartTotalComponent } from '../../components/cart/cart-total/cart-total.component';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ItemCartComponent, CommonModule, EmptyCartComponent],
+  imports: [
+    ItemCartComponent,
+    CommonModule,
+    EmptyCartComponent,
+    CartTotalComponent,
+  ],
   templateUrl: './cart.component.html',
 })
 export class CartComponent implements OnInit {
