@@ -5,3 +5,4 @@
 *.test.ts
 *.http
 *.txt
+/apps/web/cypress/*
