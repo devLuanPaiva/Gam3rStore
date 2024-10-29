@@ -10,7 +10,5 @@
     </li>
   </ul>
   <app-cart-total [itemCount]="totalItems" [totalPrice]="totalPrice" *ngIf="totalPrice !== 0" />
-  <div *ngIf="items.length === 0">
-    <app-empty-cart />
-  </div>
+  <app-empty-cart *ngIf="items.length === 0"/>
 </section>
