@@ -1,58 +1,60 @@
-<article class="flex items-center bg-[#0e001d] px-8 py-0 rounded-xl gap-16">
-    <img [src]="item.product.image" width="200" [alt]="item.product.name">
-    <div class="flex flex-col h-28 flex-1">
-        <h2 class="text-xl"> {{item.product.name}} </h2>
+<article class="flex flex-col sm:flex-row items-center bg-[#0e001d] px-4 sm:px-6 md:px-8 py-4 rounded-xl sm:gap-6 md:gap-12">
+    <img [src]="item.product.image" class="w-40 sm:w-32 md:w-36" [alt]="item.product.name">
+    
+    <div class="flex flex-col flex-1">
+        <h2 class="text-base md:text-lg lg:text-xl"> {{item.product.name}} </h2>
     </div>
-    <section class="flex flex-col items-center gap-4">
-        <h3 class="text-sm text-zinc-400">Quantidade</h3>
-        <div class="flex items-center border border-zinc-300 rounded-lg">
-            <button
-                [disabled]="item.quantity === 1"
-                [ngClass]="{
-                    'text-zinc-500 cursor-not-allowed': item.quantity === 1,
-                    'px-2 py-0.5': true
-                  }"
-                (click)="removeItem()">
-                <fa-icon [icon]="icons.minus" size="sm" />
+    
+    <div class="flex justify-around w-full space-x-4 items-baseline sm:items-center sm:w-3/5 md:w-2/5">
+        <section class="flex flex-col items-center gap-3 sm:gap-4">
+            <h3 class="text-sm text-zinc-400">Quantidade</h3>
+            <div class="flex items-center border border-zinc-300 rounded-lg">
+                <button
+                    [disabled]="item.quantity === 1"
+                    [ngClass]="{
+                        'text-zinc-500 cursor-not-allowed': item.quantity === 1,
+                        'px-2 py-0.5': true
+                      }"
+                    (click)="removeItem()">
+                    <fa-icon [icon]="icons.minus" size="sm" />
+                </button>
+                <span class="border-x border-zinc-300 text-base md:text-lg px-3 py-0.5">
+                    {{ item.quantity }}
+                </span>
+                <button
+                    [disabled]="item.quantity === 100"
+                    class="px-2 py-0.5 text-emerald-500"
+                    (click)="addItem()">
+                    <fa-icon [icon]="icons.plus" size="sm" />
+                </button>
+            </div>
+            <button class="flex items-center gap-1 text-pink-600 text-sm md:text-base select-none"
+                (click)="removeProduct()">
+                <fa-icon [icon]="icons.trash" size="lg" />
+                Remover
             </button>
-            <span class="border-x border-zinc-300 text-lg px-4 py-0.5">
-                {{ item.quantity }}
-            </span>
-
-            <button
-                [disabled]="item.quantity === 100"
-                class="px-2 py-0.5 text-emerald-500"
-                (click)="addItem()">
-                <fa-icon [icon]="icons.plus" size="sm" />
-            </button>
-        </div>
-        <button class="flex items-center gap-1 text-pink-600 select-none"
-            (click)="removeProduct()">
-            <fa-icon [icon]="icons.trash" size="lg" />
-            Remover
-        </button>
-    </section>
-    <section class="flex flex-col items-end">
-        <p class="line-through text-zinc-400 text-sm">
-            de {{item.product.basePrice | currency: 'BRL'}}
-        </p>
-        <div class="flex gap-1.5 items-baseline">
-            <p class="text-sm">por</p>
-            <p class="text-emerald-500 text-xl font-semibold">
-                {{item.product.promotionalPrice | currency: 'BRL'}}
+        </section>
+        <section class="flex flex-col gap-1 mt-4 sm:mt-0 text-justify items-end w-2/5">
+            <p class="line-through text-justify text-zinc-400 text-xs sm:text-sm">
+                de {{item.product.basePrice | currency: 'BRL'}}
             </p>
-        </div>
-        <h4 class="text-xs text-zinc-300">Preço à vista no PIX/Boleto</h4>
-        <p class="text-sm text-zinc-300 mt-4">Parcelamento no cartão</p>
-        <div class="text-sm text-zinc-300">
-            em até{{' '}}
-            <p
-                class="text-white font-semibold">{{installmentDetails!.numberOfInstallments}}x</p>
-            de{{' '}}
-            <p
-                class="text-white font-semibold">{{installmentDetails!.installmentValue
-                | currency: 'BRL'}}</p>
-        </div>
-
-    </section>
+        
+            <div class="flex gap-1 items-baseline">
+                <p class="text-xs text-justify sm:text-sm ">por</p>
+                <p class="text-emerald-500 text-justify text-lg md:text-lg font-semibold">
+                    {{item.product.promotionalPrice | currency: 'BRL'}}
+                </p>
+            </div>
+            <h4 class="text-xs text-justify text-zinc-300">Preço à vista no PIX/Boleto</h4>
+            <p class="text-xs sm:text-sm text-justify text-zinc-300 mt-2 sm:mt-4">Parcelamento no cartão em até
+                <span class="text-white text-justify font-semibold">
+                    {{ installmentDetails!.numberOfInstallments }}x
+                </span>
+                de
+                <span class="text-white text-justify font-semibold">
+                    {{ installmentDetails!.installmentValue | currency: 'BRL' }}.
+                </span>
+            </p>
+        </section>
+    </div>
 </article>
