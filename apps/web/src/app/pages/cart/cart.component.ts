@@ -3,11 +3,12 @@ import { ICartItem, IProduct } from '@gstore/core';
 import { CartService } from '../../services/cart.service';
 import { ItemCartComponent } from '../../components/cart/item-cart/item-cart.component';
 import { CommonModule } from '@angular/common';
+import { EmptyCartComponent } from '../../components/cart/empty-cart/empty-cart.component';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ItemCartComponent, CommonModule],
+  imports: [ItemCartComponent, CommonModule, EmptyCartComponent],
   templateUrl: './cart.component.html',
 })
 export class CartComponent implements OnInit {

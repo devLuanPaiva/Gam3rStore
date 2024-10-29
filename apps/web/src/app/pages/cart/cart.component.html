@@ -9,5 +9,7 @@
           </app-item-cart>
         </li>
       </ul>
-    <p *ngIf="items.length === 0">No items found.</p>
+    <div *ngIf="items.length === 0">
+      <app-empty-cart/>
+    </div>
 </section>
