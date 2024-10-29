@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LogoComponent } from '../../shared/logo/logo.component';
 import { CartIconComponent } from '../../shared/cart-icon/cart-icon.component';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -11,5 +12,11 @@ import { CartIconComponent } from '../../shared/cart-icon/cart-icon.component';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  amountItems: number = 10;
+  amountItems: number = 0;
+  constructor(private readonly cartService: CartService) {}
+  ngOnInit(): void {
+    this.cartService.cartItems$.subscribe((items) => {
+      this.amountItems = items.length;
+    });
+  }
 }

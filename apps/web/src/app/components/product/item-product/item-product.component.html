@@ -1,4 +1,4 @@
-<a [routerLink]="['/product', product.id]"
+<a
     class="flex text-white flex-col bg-[#0e001d] border border-white/10 rounded-xl relative max-w-[350px] min-h-[490px] md:h-[456px]">
     <div class="absolute flex z-10 justify-end top-2.5 right-2.5">
         <app-item-review [rating]="product.rating" />
@@ -8,7 +8,8 @@
             class="object-contain max-w-full max-h-full" />
     </figure>
     <section class="flex-1 flex flex-col gap-3 p-5 border-t border-white/10">
-        <h2 class="text-lg font-semibold"> {{product.name}} </h2>
+        <a class="text-lg font-semibold"
+            [routerLink]="['/product', product.id]"> {{product.name}} </a>
         <p class="self-start text-sm border-b border-dashed">
             {{product.specifications.highlight}}
         </p>
@@ -20,11 +21,13 @@
             <p class="text-xl font-semibold text-emerald-400">por
                 {{product.promotionalPrice | currency: 'BRL'}}</p>
             <p class="text-zinc-400 text-xs">
-                até 12x de R$120,00
+                até {{installmentDetails.numberOfInstallments}}x de
+                {{installmentDetails.installmentValue| currency: 'BRL'}}
             </p>
         </section>
         <button
-            class="flex justify-center items-center gap-2 h-8 bg-violet-700 hover:border-2 border-emerald-500 rounded-full">
+            class="flex justify-center items-center gap-2 h-8 bg-violet-700 hover:border-2 border-emerald-500 rounded-full"
+            (click)="addToCart(product)">
             <fa-icon [icon]="icons.cart"></fa-icon>
             <span>Adicionar</span>
         </button>

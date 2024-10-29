@@ -1,0 +1,7 @@
+*.log
+*.tmp
+*.md
+*.spec.ts
+*.test.ts
+*.http
+*.txt
