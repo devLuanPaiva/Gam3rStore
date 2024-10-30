@@ -1,12 +1,12 @@
 # Gam3r Store 🕹️
 
-**Gam3r Store** é um projeto de e-commerce voltado para a venda de aparelhos eletrônicos. Atualmente, estamos na **Versão 1.1**, com o foco no desenvolvimento da filtragem de produtos. O objetivo é permitir que o usuário filtre produtos, buscando os mesmos pelo nome.
+**Gam3r Store** é um projeto de e-commerce voltado para a venda de aparelhos eletrônicos.
 
 ## 🚀 Visão Geral do Projeto
 
 - **Status**: Em desenvolvimento
-- **Versão Atual**: 1.1
-- **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma
+- **Versão Atual**: 2.0
+- **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma, Cypress
 
 ## 🔧 Funcionalidades Implementadas
 
@@ -26,12 +26,13 @@ Até o momento, foram desenvolvidas e testadas:
 ### Interfaces:
 - **Listar Produtos**: Listagem de todos os produtos, onde cada card contém o nome, estrelas, foto, preço e descrição.
 - **Filtrar Produtos**: Friltragem de todos os produtos, onde o usuário insere o nome do produto no campo de busca e assim é filtrado.
+- **Carrinho**: O usuário pode inserir quantos produtos quiser no carrinho, aumentar e diminuir a quantidade, e remover produto.
 
 ### 🧪 Testes
 
-As funcionalidades implementadas foram testadas utilizando o framework **Jest**, com um total de **20 testes** aprovados até o momento, send:
+As funcionalidades implementadas foram testadas utilizando **Jest e Cypress**, com um total de **25 testes** aprovados até o momento, sendo:
 - **Core**: 11 testes para as regras de negócio
-- **Front-end**: 5 testes utilizando o BetTest em relação à listagem dos produtos.
+- **Front-end**: 5 testes unitários e de integração, e 5 testes E2E.
 - **Backend**: 4 testes para todas as operações.
 
 ## 📦 Estrutura do Projeto
@@ -43,23 +44,14 @@ O Gam3r Store está sendo desenvolvido utilizando uma arquitetura **monorepo**, 
 - **Mobile**
   - React Native (planejado)
 - **Backend**: 
-  - NestJS (planejado)
+  - NestJS (em desenvolvimento)
   - Prisma (para interações com o banco de dados)
 - **Estilo**: Tailwind CSS
-- **Testes**: Jest
+- **Testes**: Jest, Cypress
 - **Linguagem**: TypeScript
 
 ## 🌐 Deploy
 A aplicação está disponivel na Vercel, podendo ser acessado em: [Gam3er](https://game-api-beta.vercel.app)
-
-## 💡 Próximos Passos
-
-### Funcionalidades Planejadas
-
-- **Interface de Usuário (UI)**: Ainda não há interfaces criadas. Planejo desenvolver as seguintes funcionalidades:
-- **Detalhes do Produto**: Visualizar informações detalhadas de cada produto.
-- **Carrinho de Compras**: Adicionar e remover produtos do carrinho.
-- **Finalização de Compra**: Escolha da forma de pagamento e endereço de entrega.
 
 ## 📂 Como Executar o Projeto Localmente
 
@@ -98,16 +90,16 @@ yarn install
 ```
 5. Abra o navegador e acesse `http://localhost:3000`, ou baixe o app [ExpoGo](https://expo.dev/go) para acessar a versão mobile em seu smartphone.
 
-## 🧪 Realizar Testes
 
-1. Navege até a pasta do projeto:
-```sh
-cd GamerStore
-```
-2. Rode o comando:
-```sh
-npm run test
-```
+## 🌌 Interfaces
+### Tela Inicial
+![Home](https://i.ibb.co/1Jfd2pv/Captura-de-tela-2024-10-30-142933.png)
+
+### Buscar Produto
+![Busca](https://i.ibb.co/vVgyw46/Captura-de-tela-2024-10-30-142946.png)
+
+### Carrinho
+![Carrinho](https://i.ibb.co/9rG2pwq/Captura-de-tela-2024-10-30-143008.png)
 
 ## 🧾 License
 Esse README fornece uma visão clara do estado atual do projeto, tecnologias utilizadas, desafios e funcionalidades planejadas, além de guiar outros desenvolvedores sobre como executar o projeto localmente.
