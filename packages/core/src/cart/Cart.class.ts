@@ -16,16 +16,18 @@ export default class Cart {
   removeItem(product: IProduct) {
     const item = this.itemByProduct(product);
     if (!item) return this;
+    return new Cart(this.changeItemQuantity(this.items, product, -1));
+  }
+  removeProduct(product: IProduct) {
+    const item = this.itemByProduct(product);
+    if (!item) return this;
     return new Cart(this.items.filter((i) => i.product.id !== product.id));
   }
 
-  private itemByProduct(product: IProduct): ICartItem | undefined {
-    return this.items.find((item) => item.product.id === product.id);
-  }
   clear() {
     return new Cart();
   }
-
+  
   get quantityItems() {
     return this.items.reduce((acc, item) => acc + item.quantity, 0);
   }
@@ -40,6 +42,9 @@ export default class Cart {
       (acc, item) => acc + item.product.basePrice * item.quantity,
       0
     );
+  }
+  private itemByProduct(product: IProduct): ICartItem | undefined {
+    return this.items.find((item) => item.product.id === product.id);
   }
   private changeItemQuantity(
     items: ICartItem[],

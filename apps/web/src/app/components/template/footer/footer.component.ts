@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LogoComponent } from '../../shared/logo/logo.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faFacebook,
@@ -12,7 +13,7 @@ import {
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, LogoComponent],
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {

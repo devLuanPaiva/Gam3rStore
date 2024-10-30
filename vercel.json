@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "apps/web/dist/web/browser/**",
+      "src": "apps/web/dist/web/browser/**/*",
       "use": "@vercel/static"
     }
   ],
@@ -16,9 +16,9 @@
       "dest": "/apps/api/src/main.ts"
     },
     {
-      "src": "/(.*)*",
-      "dest": "/apps/web/dist/web/browser/$1"
+      "src": "/(.*)",
+      "dest": "/apps/web/dist/web/browser/$1",
+      "check": true
     }
-
   ]
 }

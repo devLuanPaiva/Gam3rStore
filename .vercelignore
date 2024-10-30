@@ -1,0 +1,8 @@
+*.log
+*.tmp
+*.md
+*.spec.ts
+*.test.ts
+*.http
+*.txt
+/apps/web/cypress/*

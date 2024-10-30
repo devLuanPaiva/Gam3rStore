@@ -45,10 +45,11 @@ describe('ListProductComponent', () => {
     component.products = [];
     fixture.detectChanges();
 
-    const noProductsMessage = fixture.debugElement.query(
-      By.css('p.text-center'),
+    const noProductsComponent = fixture.debugElement.query(
+      By.css('app-product-not-found'),
     );
-    expect(noProductsMessage.nativeElement.textContent).toContain(
+    expect(noProductsComponent).toBeTruthy();
+    expect(noProductsComponent.nativeElement.textContent).toContain(
       'Nenhum produto encontrado.',
     );
   });
