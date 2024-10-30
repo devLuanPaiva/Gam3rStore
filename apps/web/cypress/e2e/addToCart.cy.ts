@@ -51,4 +51,13 @@ describe('Add product to cart', () => {
           });
       });
   });
+  it('should remove the product from the cart and show an empty cart message', () =>{
+    cy.visit('/');
+    cy.get('app-item-product button').first().click();
+    cy.get('app-cart-icon div').click();
+    cy.url().should('include', '/cart');
+    cy.get('app-item-cart').should('contain', 'Notebook Gamer Acer Nitro 5');
+    cy.get('app-item-cart button').contains('Remover').click()
+    cy.get('app-empty-cart').should('be.visible');
+  })
 });
