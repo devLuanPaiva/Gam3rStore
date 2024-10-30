@@ -4,7 +4,7 @@ export default interface IOrderDelivery {
   email: string;
   cpf: string;
   street: string;
-  additionalInfo: string;
+  complement: string;
   city: string;
   state: string;
 }
