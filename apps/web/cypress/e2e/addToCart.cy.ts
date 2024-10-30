@@ -31,4 +31,24 @@ describe('Add product to cart', () => {
     // verify the product is in the cart
     cy.get('app-item-cart').should('contain', 'Notebook Gamer Acer Nitro 5');
   });
+  it('should update total price when adding item to cart', () => {
+    cy.visit('/');
+    cy.get('app-item-product button').first().click();
+    cy.get('app-cart-icon div').click();
+    cy.url().should('include', '/cart');
+    cy.get('app-item-cart').should('contain', 'Notebook Gamer Acer Nitro 5');
+    cy.get('app-cart-total p')
+      .invoke('text')
+      .then((initialTotal) => {
+        cy.get('app-item-cart button.text-emerald-500')
+          .should('be.visible')
+          .click();
+
+        cy.get('app-cart-total p')
+          .invoke('text')
+          .should((updetadTotal) => {
+            expect(updetadTotal).not.to.equal(initialTotal);
+          });
+      });
+  });
 });
