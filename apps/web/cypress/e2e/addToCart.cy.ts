@@ -51,13 +51,24 @@ describe('Add product to cart', () => {
           });
       });
   });
-  it('should remove the product from the cart and show an empty cart message', () =>{
+  it('should remove the product from the cart and show an empty cart message', () => {
     cy.visit('/');
     cy.get('app-item-product button').first().click();
     cy.get('app-cart-icon div').click();
     cy.url().should('include', '/cart');
     cy.get('app-item-cart').should('contain', 'Notebook Gamer Acer Nitro 5');
-    cy.get('app-item-cart button').contains('Remover').click()
+    cy.get('app-item-cart button').contains('Remover').click();
     cy.get('app-empty-cart').should('be.visible');
-  })
+  });
+  it('should display only "Notebook Gamer Acer Nitro 5" in the product list when searched', () => {
+    cy.visit('/');
+
+    cy.get('app-filter-product input[type="search"]').type(
+      'Notebook Gamer Acer Nitro 5',
+    );
+    cy.get('app-list-product')
+      .find('app-item-product')
+      .should('have.length', 1)
+      .and('contain.text', 'Notebook Gamer Acer Nitro 5');
+  });
 });
