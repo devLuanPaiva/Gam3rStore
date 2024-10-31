@@ -1,0 +1,41 @@
+<article [ngClass]="
+'flex flex-col self-start gap-3 w-96 px-6 py-8  rounded-xl bg-[#0e001d] ' + className">
+    <h2 class="text-xl font-semibold">Resumo:</h2>
+    <div class="flex justify-between">
+        <h3 class="text-zinc-400">Forma de Pagamento:</h3>
+        <p> {{methodPay}}</p>
+    </div>
+    <div class="flex justify-between">
+        <h3 class="text-zinc-400">Valor Total:</h3>
+        <p class="text-emerald-500 font-semibold">
+            {{value | currency: 'BRL'}}
+        </p>
+    </div>
+    <div class="flex justify-between">
+        <h3 class="text-zinc-400">Desconto:</h3>
+        <p class="text-red-500 font-semibold">
+            {{value - totalPrice | currency: 'BRL'}}
+        </p>
+    </div>
+    <div class="flex flex-col justify-end">
+        <h3 class="text-zinc-400">à vista no PIX/BOLETO:</h3>
+        <p class="text-emerald-500 font-semibold text-2xl">
+            {{totalPrice | currency: 'BRL'}}
+        </p>
+    </div>
+    <div class="flex justify-end">
+        <h3 class="text-zinc-300 text-sm mt-2">Parcelamento no Cartão:</h3>
+        <p class=" text-sm text-zinc-300">
+            em até
+            <span class="text-white font-semibold">
+                {{installment.numberOfInstallments}} x </span>
+            de
+            <span class="text-white font-semibold">
+                {{installment.installmentValue | currency: 'BRL' }} </span>
+        </p>
+    </div>
+    <button class="button bg-indigo-700 mt-7">
+        <fa-icon [icon]="faCredCard" />
+        <span>Finalizar Compra</span>
+    </button>
+</article>
