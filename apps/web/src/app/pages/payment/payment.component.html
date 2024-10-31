@@ -1,0 +1,19 @@
+<section class="flex-1 flex flex-col space-y-4 pt-4 container">
+    <section class="flex flex-col gap-4 md:flex-row">
+        <div class="flex-1 flex flex-col gap-5">
+            <app-form-delivery
+                [delivery]="delivery"
+                (deliveryChange)="changeDelivery($event)" />
+            <app-method-payment
+                [methodPayment]="methodPayment"
+                (changedMethod)="changeMethodPayment($event)" />
+        </div>
+        <app-summary
+            [methodPay]="methodPayment"
+            [installment]="installment"
+            [ammountItem]="totalQuantity"
+            [value]="fullPrice"
+            [totalPrice]="totalPrice"
+            (finalizePurchase)="finalizePurchase()" />
+    </section>
+</section>
