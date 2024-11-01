@@ -1,40 +1,35 @@
-<article [ngClass]="
-'flex flex-col self-start gap-3 px-6 py-8  rounded-xl bg-[#0e001d] ' + className">
-    <h2 class="text-xl font-semibold">Resumo:</h2>
-    <div class="flex justify-between">
+<article [ngClass]="'flex flex-col gap-3 p-4 sm:p-6 rounded-xl bg-[#0e001d] ' + className">
+    <h2 class="text-lg sm:text-xl font-semibold">Resumo:</h2>
+    <div class="flex justify-between flex-wrap sm:flex-nowrap">
         <h3 class="text-zinc-400">Forma de Pagamento:</h3>
         <p> {{methodPay}}</p>
     </div>
-    <div class="flex justify-between">
+    <div class="flex justify-between flex-wrap sm:flex-nowrap">
         <h3 class="text-zinc-400">Valor Total:</h3>
         <p class="text-emerald-500 font-semibold">
             {{value | currency: 'BRL'}}
         </p>
     </div>
-    <div class="flex justify-between">
+    <div class="flex justify-between flex-wrap sm:flex-nowrap">
         <h3 class="text-zinc-400">Desconto:</h3>
         <p class="text-red-500 font-semibold">
             {{value - totalPrice | currency: 'BRL'}}
         </p>
     </div>
-    <div class="flex flex-col justify-end">
+    <div class="flex flex-col justify-end mt-4">
         <h3 class="text-zinc-400">à vista no PIX/BOLETO:</h3>
-        <p class="text-emerald-500 font-semibold text-2xl">
+        <p class="text-emerald-500 font-semibold text-xl sm:text-2xl">
             {{totalPrice | currency: 'BRL'}}
         </p>
     </div>
-    <div class="flex justify-end mt-2">
-        <h3 class="text-zinc-300 text-sm">Parcelamento no cartão </h3>
-        <p class="ml-1 text-sm text-zinc-300">
-            em até
-            <span class="text-white font-semibold">
-                {{installment.numberOfInstallments}} x </span>
-            de
-            <span class="text-white font-semibold">
-                {{installment.installmentValue | currency: 'BRL' }} </span>
+    <div class="flex justify-end mt-2 text-sm sm:text-base">
+        <h3 class="text-zinc-300">Parcelamento no cartão </h3>
+        <p class="ml-1 text-zinc-300">
+            em até <span class="font-semibold">{{installment.numberOfInstallments}} x</span> de 
+            <span class="font-semibold">{{installment.installmentValue | currency: 'BRL'}}</span>
         </p>
     </div>
-    <button class="button bg-indigo-700 mt-7">
+    <button class="button bg-indigo-700 mt-5 sm:mt-7 w-full sm:w-auto">
         <fa-icon [icon]="faCredCard" />
         <span>Finalizar Compra</span>
     </button>

@@ -7,15 +7,16 @@ import { EPaymentMethod } from '@gstore/core';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="flex flex-col gap-3">
-      <h2 class="text-xl font-bold text-white/70">
+    <section class="flex flex-col gap-3 w-full">
+      <h2 class="text-lg sm:text-xl font-bold text-white/70">
         Forma de Pagamento
       </h2>
       <button
         *ngFor="let method of methods"
         (click)="selectMethod(method)"
         [ngClass]="
-          'flex items-center gap-3 rounded-lg h-12 px-7 bg-[#0e001d] ' + className
+          'flex items-center gap-3 rounded-lg h-12 px-5 sm:px-7 bg-[#0e001d] w-full sm:w-auto ' +
+          className
         "
       >
         <span
@@ -25,8 +26,7 @@ import { EPaymentMethod } from '@gstore/core';
               : 'bg-transparent border-white'
           "
           class="w-5 h-5 border-2 rounded-full"
-        >
-        </span>
+        ></span>
         {{ method }}
       </button>
     </section>
