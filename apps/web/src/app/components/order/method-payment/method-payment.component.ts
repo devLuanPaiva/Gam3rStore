@@ -8,7 +8,7 @@ import { EPaymentMethod } from '@gstore/core';
   imports: [CommonModule],
   template: `
     <section class="flex flex-col gap-3">
-      <h2 class="px-7 pb-2 text-xl font-bold text-white/70">
+      <h2 class="text-xl font-bold text-white/70">
         Forma de Pagamento
       </h2>
       <button
