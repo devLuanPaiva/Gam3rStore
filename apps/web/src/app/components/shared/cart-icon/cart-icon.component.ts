@@ -1,5 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  Input,
+  Inject,
+  PLATFORM_ID,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
@@ -24,14 +31,27 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
     </figure>
   `,
 })
-export class CartIconComponent {
+export class CartIconComponent implements OnInit, OnDestroy {
   @Input() amountItems: number = 0;
   faShoppingCart = faShoppingCart;
-  isSmallScreen = window.innerWidth < 640;
+  isSmallScreen = false;
 
-  constructor() {
-    window.addEventListener('resize', () => {
+  constructor(@Inject(PLATFORM_ID) private readonly platformId: Object) {}
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
       this.isSmallScreen = window.innerWidth < 640;
-    });
+      window.addEventListener('resize', this.checkScreenSize);
+    }
   }
+
+  ngOnDestroy() {
+    if (isPlatformBrowser(this.platformId)) {
+      window.removeEventListener('resize', this.checkScreenSize);
+    }
+  }
+
+  private readonly checkScreenSize = () => {
+    this.isSmallScreen = window.innerWidth < 640;
+  };
 }
