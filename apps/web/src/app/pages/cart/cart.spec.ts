@@ -52,4 +52,10 @@ describe('CartTotalComponent', () => {
     component.addItemToCart(productToAdd);
     expect(cartService.addItem).toHaveBeenCalledWith(productToAdd);
   })
+  it('should remove an item from the cart', () => {
+    const productToRemove = mockProducts[0]
+    component.removeItemFromCart(productToRemove);
+    expect(cartService.removeItem).toHaveBeenCalledWith(productToRemove);
+  })
+
 });
