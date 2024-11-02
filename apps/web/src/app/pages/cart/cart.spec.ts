@@ -48,14 +48,18 @@ describe('CartTotalComponent', () => {
     });
   });
   it('should add an item to the cart', () => {
-    const productToAdd = mockProducts[0]
+    const productToAdd = mockProducts[0];
     component.addItemToCart(productToAdd);
     expect(cartService.addItem).toHaveBeenCalledWith(productToAdd);
-  })
+  });
   it('should remove an item from the cart', () => {
-    const productToRemove = mockProducts[0]
+    const productToRemove = mockProducts[0];
     component.removeItemFromCart(productToRemove);
     expect(cartService.removeItem).toHaveBeenCalledWith(productToRemove);
-  })
-
+  });
+  it('should handle empty cart correctly', () => {
+    cartService.cartItems$ = of([]);
+    component.ngOnInit();
+    expect(component.items.length).toBe(0);
+  });
 });
