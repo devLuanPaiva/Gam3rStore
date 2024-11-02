@@ -35,7 +35,7 @@ describe('OrderController', () => {
   const mockOrderView = {
     saveOrder: jest.fn(),
     getAllOrders: jest.fn().mockResolvedValue([mockOrder]),
-    getOrderById: jest.fn().mockResolvedValue(mockOrder),
+    getOrderById: jest.fn().mockResolvedValue([mockOrder]),
     deleteOrder: jest.fn(),
   };
 
@@ -70,5 +70,11 @@ describe('OrderController', () => {
     const result = await orderController.getAllOrders();
     expect(result).toEqual([mockOrder]);
     expect(orderView.getAllOrders).toHaveBeenCalledTimes(1);
+  });
+  it('should return a specific order by id', async () => {
+    const result = await orderController.getOrderById(mockOrder.id.toString());
+    expect(result).toEqual([mockOrder]);
+    expect(orderView.getOrderById).toHaveBeenCalledWith(mockOrder.id);
+    expect(orderView.getOrderById).toHaveBeenCalledTimes(1);
   });
 });
