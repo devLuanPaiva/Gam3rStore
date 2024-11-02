@@ -5,7 +5,7 @@
 ## 🚀 Visão Geral do Projeto
 
 - **Status**: Em desenvolvimento
-- **Versão Atual**: 2.0
+- **Versão Atual**: 2.5
 - **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma, Cypress
 
 ## 🔧 Funcionalidades Implementadas
@@ -22,6 +22,10 @@ Até o momento, foram desenvolvidas e testadas:
 - **Listar Produtos**: Listagem de todos os produtos cadastrados.
 - **Listar Produto por Id**: Retornar produto após busca por Id.
 - **Deletar Produto**: Deletar produto por Id.
+- **Criar Pedido**: Cadastrar um novo pedido para entrega.
+- **Listar Pedidos**: Listar todos os Pedidos.
+- **Listar Pedidos por Id**: Retornar um pedido após busca por id.
+- **Deletar Pedidos por Id**: Deletar um pedido após busca por id.
 
 ### Interfaces:
 - **Listar Produtos**: Listagem de todos os produtos, onde cada card contém o nome, estrelas, foto, preço e descrição.
@@ -33,7 +37,7 @@ Até o momento, foram desenvolvidas e testadas:
 As funcionalidades implementadas foram testadas utilizando **Jest e Cypress**, com um total de **25 testes** aprovados até o momento, sendo:
 - **Core**: 11 testes para as regras de negócio
 - **Front-end**: 5 testes unitários e de integração, e 5 testes E2E.
-- **Backend**: 4 testes para todas as operações.
+- **Backend**: 9 testes para todas as operações.
 
 ## 📦 Estrutura do Projeto
 
