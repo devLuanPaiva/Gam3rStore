@@ -66,4 +66,9 @@ describe('OrderController', () => {
     expect(orderView.saveOrder).toHaveBeenCalledWith(mockOrder);
     expect(orderView.saveOrder).toHaveBeenCalledTimes(1);
   });
+  it('should return a list of orders', async () => {
+    const result = await orderController.getAllOrders();
+    expect(result).toEqual([mockOrder]);
+    expect(orderView.getAllOrders).toHaveBeenCalledTimes(1);
+  });
 });
