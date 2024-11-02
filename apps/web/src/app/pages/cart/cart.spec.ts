@@ -2,6 +2,7 @@ import { of } from 'rxjs';
 import { CartComponent } from './cart.component';
 import { ICartItem, IProduct } from '@gstore/core';
 import { CartService } from '../../services/cart.service';
+import { mockProducts } from '../../services/product.mock';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ItemCartComponent } from '../../components/cart/item-cart/item-cart.component';
 import { CartTotalComponent } from '../../components/cart/cart-total/cart-total.component';
@@ -18,6 +19,12 @@ describe('CartTotalComponent', () => {
       'removeProduct',
       'cartItems$',
     ]);
+    const mockCartItems: ICartItem[] = mockProducts.map((product) => ({
+      product: product,
+      quantity: Math.floor(Math.random() * 3) + 1,
+    }));
+
+    cartServiceSpy.cartItems$ = of(mockCartItems);
     await TestBed.configureTestingModule({
       imports: [
         CartComponent,
@@ -32,7 +39,17 @@ describe('CartTotalComponent', () => {
     component = fixture.componentInstance;
     cartService = TestBed.inject(CartService) as jasmine.SpyObj<CartService>;
   });
-  it('should load cart data on init', () => {
-    expect(component).toBeTruthy();
+
+  it('should load cart data in init', () => {
+    component.ngOnInit();
+    cartService.cartItems$.subscribe((cartItems) => {
+      expect(component.items.length).toBeGreaterThan(0);
+      expect(component.items).toEqual(cartItems);
+    });
   });
+  it('should add an item to the cart', () => {
+    const productToAdd = mockProducts[0]
+    component.addItemToCart(productToAdd);
+    expect(cartService.addItem).toHaveBeenCalledWith(productToAdd);
+  })
 });
