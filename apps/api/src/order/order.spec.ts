@@ -77,4 +77,9 @@ describe('OrderController', () => {
     expect(orderView.getOrderById).toHaveBeenCalledWith(mockOrder.id);
     expect(orderView.getOrderById).toHaveBeenCalledTimes(1);
   });
+  it('should call deleteOrder with the correct id', async () => {
+    await orderController.deleteOrder('1');
+    expect(orderView.deleteOrder).toHaveBeenCalledWith(1);
+    expect(orderView.deleteOrder).toHaveBeenCalledTimes(1);
+  });
 });
