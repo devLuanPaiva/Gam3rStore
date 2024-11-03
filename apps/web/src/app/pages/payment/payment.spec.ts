@@ -45,4 +45,12 @@ describe('PaymentComponent', () => {
     expect(component.fullPrice).toBe(cartService.fullPrice);
     expect(component.totalQuantity).toBe(cartService.totalQuantity);
   });
+  it('should update methodPayment on changeMethodPayment', () => {
+    component.ngOnInit();
+    component.changeMethodPayment(EPaymentMethod.BOLETO);
+    expect(component.methodPayment).toBe(EPaymentMethod.BOLETO);
+    expect(paymentService.updateMethodPayment).toHaveBeenCalledWith(
+      EPaymentMethod.BOLETO,
+    );
+  });
 });
