@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SummaryComponent } from '../../components/order/summary/summary.component';
 import { FormDeliveryComponent } from '../../components/order/form-delivery/form-delivery.component';
 import { MethodPaymentComponent } from '../../components/order/method-payment/method-payment.component';
+import { PagesStepsComponent } from '../../components/shared/pages-steps/pages-steps.component';
 @Component({
   selector: 'app-payment',
   standalone: true,
@@ -14,6 +15,7 @@ import { MethodPaymentComponent } from '../../components/order/method-payment/me
     SummaryComponent,
     FormDeliveryComponent,
     MethodPaymentComponent,
+    PagesStepsComponent
   ],
   templateUrl: './payment.component.html',
 })
