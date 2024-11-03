@@ -61,10 +61,10 @@ model OrderDelivery {
   name       String
   email      String
   cpf        String
-  address    String
+  street    String
   complement String
   city       String
   state      String
-
+  
   order Order?
 }

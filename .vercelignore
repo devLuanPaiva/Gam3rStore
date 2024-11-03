@@ -3,6 +3,9 @@
 *.md
 *.spec.ts
 *.test.ts
+*.cy.ts
 *.http
 *.txt
-/apps/web/cypress/*
+**/node_modules/
+**/cypress/**
+**.angular/cache/
