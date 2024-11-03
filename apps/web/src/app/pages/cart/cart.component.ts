@@ -5,6 +5,7 @@ import { ItemCartComponent } from '../../components/cart/item-cart/item-cart.com
 import { CommonModule } from '@angular/common';
 import { EmptyCartComponent } from '../../components/cart/empty-cart/empty-cart.component';
 import { CartTotalComponent } from '../../components/cart/cart-total/cart-total.component';
+import { PagesStepsComponent } from '../../components/shared/pages-steps/pages-steps.component';
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +15,7 @@ import { CartTotalComponent } from '../../components/cart/cart-total/cart-total.
     CommonModule,
     EmptyCartComponent,
     CartTotalComponent,
+    PagesStepsComponent
   ],
   templateUrl: './cart.component.html',
 })
