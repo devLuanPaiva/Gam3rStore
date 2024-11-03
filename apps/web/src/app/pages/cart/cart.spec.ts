@@ -1,6 +1,6 @@
 import { of } from 'rxjs';
+import { ICartItem } from '@gstore/core';
 import { CartComponent } from './cart.component';
-import { ICartItem, IProduct } from '@gstore/core';
 import { CartService } from '../../services/cart.service';
 import { mockProducts } from '../../services/product.mock';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
