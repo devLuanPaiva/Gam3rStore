@@ -1,5 +1,5 @@
 import { of } from 'rxjs';
-import { EPaymentMethod } from '@gstore/core';
+import { EPaymentMethod, IOrderDelivery } from '@gstore/core';
 import { PaymentComponent } from './payment.component';
 import { CartService } from '../../services/cart.service';
 import { PaymentService } from '../../services/payment.service';
@@ -52,5 +52,21 @@ describe('PaymentComponent', () => {
     expect(paymentService.updateMethodPayment).toHaveBeenCalledWith(
       EPaymentMethod.BOLETO,
     );
+  });
+  it('should update delivery on changeDelivery', () => {
+    component.ngOnInit();
+    const deliveryInfo: IOrderDelivery = {
+      id: 1,
+      name: 'João Silva',
+      email: 'joao.silva@example.com',
+      cpf: '123.456.789-00',
+      street: 'Rua das Flores, 123',
+      complement: 'Apt 202',
+      city: 'São Paulo',
+      state: 'SP',
+    };
+    component.changeDelivery(deliveryInfo);
+    expect(component.delivery).toEqual(deliveryInfo);
+    expect(paymentService.updateDeliver).toHaveBeenCalledWith(deliveryInfo);
   });
 });
