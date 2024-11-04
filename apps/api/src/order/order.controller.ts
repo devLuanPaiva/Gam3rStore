@@ -6,7 +6,7 @@ import { IOder } from '@gstore/core';
 export class OrderController {
   constructor(private readonly repo: OrderView) {}
 
-  @Post()
+  @Post('create')
   async createOrder(@Body() orderData: IOder) {
     await this.repo.saveOrder(orderData);
   }
