@@ -62,7 +62,6 @@ export class PaymentService {
       };
       this.apiService.httpPost('orders/create', order).subscribe({
         next: () => {
-        alert('clicou !!!')
         this.cartService.clearCart();
         this.router.navigate(['/cart/payment/success']);
       },
