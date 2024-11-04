@@ -28,5 +28,11 @@ describe('Pay Purchase', () => {
     cy.get('app-method-payment').within(() => {
       cy.get('button').contains('PIX').click();
     });
+
+    //should finalize purchase
+    cy.get('app-summary button').contains('Finalizar Compra').click();
+    cy.wait('@createOrder').its('response.statusCode').should('eq', 201);
+    cy.url().should('include', '/cart/payment/success');
+    cy.contains('Pedido Realizado com Sucesso!');
   });
 });
