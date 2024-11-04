@@ -4,6 +4,7 @@ import { PaymentComponent } from './payment.component';
 import { CartService } from '../../services/cart.service';
 import { PaymentService } from '../../services/payment.service';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 
 describe('PaymentComponent', () => {
   let component: PaymentComponent;
@@ -29,15 +30,25 @@ describe('PaymentComponent', () => {
       providers: [
         { provide: PaymentService, useValue: paymentServiceMock },
         { provide: CartService, useValue: cartServiceMock },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get: () => '1',
+              },
+            },
+          },
+        },
       ],
     }).compileComponents();
+
     fixture = TestBed.createComponent(PaymentComponent);
     component = fixture.componentInstance;
     cartService = TestBed.inject(CartService) as jasmine.SpyObj<CartService>;
-    paymentService = TestBed.inject(
-      PaymentService,
-    ) as jasmine.SpyObj<PaymentService>;
+    paymentService = TestBed.inject(PaymentService) as jasmine.SpyObj<PaymentService>;
   });
+
   it('should initialize values correctly', () => {
     component.ngOnInit();
     expect(component.installment).toEqual(cartService.installment);
@@ -45,6 +56,7 @@ describe('PaymentComponent', () => {
     expect(component.fullPrice).toBe(cartService.fullPrice);
     expect(component.totalQuantity).toBe(cartService.totalQuantity);
   });
+
   it('should update methodPayment on changeMethodPayment', () => {
     component.ngOnInit();
     component.changeMethodPayment(EPaymentMethod.BOLETO);
@@ -53,6 +65,7 @@ describe('PaymentComponent', () => {
       EPaymentMethod.BOLETO,
     );
   });
+
   it('should update delivery on changeDelivery', () => {
     component.ngOnInit();
     const deliveryInfo: IOrderDelivery = {
