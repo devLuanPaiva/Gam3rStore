@@ -1,4 +1,5 @@
 <section class="flex-1 flex flex-col space-y-4 pt-4 container">
+  <app-pages-steps *ngIf="totalPrice !== 0" [step]="'cart'" />
   <ul class="flex flex-col gap-4">
     <li *ngFor="let item of items; trackBy: trackByProductId">
       <app-item-cart

@@ -1,0 +1,22 @@
+<section
+    class="flex justify-center items-center gap-4 sm:gap-6 h-16 sm:h-20 select-none">
+    <a [routerLink]="['/cart']" class="flex items-center gap-2 cursor-pointer"
+        [ngClass]="selectedColor('cart')">
+        <span
+            class="flex justify-center items-center text-xs sm:text-sm font-bold w-5 h-5 rounded-full"
+            [ngClass]="selectedBk('cart')">
+            1
+        </span>
+        <span class="text-xs sm:text-sm">Carrinho</span>
+    </a>
+    <a [routerLink]="['/cart/payment']"
+        class="flex items-center gap-2 cursor-pointer"
+        [ngClass]="selectedColor('payment')">
+        <span
+            class="flex justify-center items-center text-xs sm:text-sm font-bold w-5 h-5 rounded-full"
+            [ngClass]="selectedBk('payment')">
+            2
+        </span>
+        <span class="text-xs sm:text-sm">Pagamento</span>
+    </a>
+</section>
