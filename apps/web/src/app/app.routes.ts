@@ -15,4 +15,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/payment/payment.module').then((m) => m.PaymentModule),
   },
+  {
+    path: 'cart/payment/success',
+    loadChildren: () =>
+      import('./pages/success/success.module').then((m) => m.SuccessModule),
+  },
 ];

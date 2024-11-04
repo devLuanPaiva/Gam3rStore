@@ -19,7 +19,7 @@ export class ApiService {
   }
 
   httpPost(path: string, body: any): Observable<any> {
-    const url = path.startsWith('/') ? path : `/${path}`;
+    const url = path.startsWith('/') ? path : `${path}`;
     const urlComplete = `${this.urlBase}/${url}`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 

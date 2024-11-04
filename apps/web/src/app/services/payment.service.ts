@@ -58,12 +58,12 @@ export class PaymentService {
             quantity: item.quantity,
             unitPrice: item.product.promotionalPrice,
           }) as IOrderItem,
-      ),
-    };
-    this.apiService.httpPost('orders', order).subscribe({
-      next: () => {
+        ),
+      };
+      this.apiService.httpPost('orders/create', order).subscribe({
+        next: () => {
         this.cartService.clearCart();
-        this.router.navigate(['/cart/success']);
+        this.router.navigate(['/cart/payment/success']);
       },
       error: (error) => {
         console.error('Error finalizing purchase:', error);
