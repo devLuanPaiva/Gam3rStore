@@ -5,8 +5,8 @@
 ## 🚀 Visão Geral do Projeto
 
 - **Status**: Em desenvolvimento
-- **Versão Atual**: 2.5
-- **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma, Cypress
+- **Versão Atual**: 2.7
+- **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma, Cypress, Jasmine
 
 ## 🔧 Funcionalidades Implementadas
 
@@ -31,12 +31,13 @@ Até o momento, foram desenvolvidas e testadas:
 - **Listar Produtos**: Listagem de todos os produtos, onde cada card contém o nome, estrelas, foto, preço e descrição.
 - **Filtrar Produtos**: Friltragem de todos os produtos, onde o usuário insere o nome do produto no campo de busca e assim é filtrado.
 - **Carrinho**: O usuário pode inserir quantos produtos quiser no carrinho, aumentar e diminuir a quantidade, e remover produto.
+- **Pagamento**: Após fechar o carrinho, o usuário vai para a tela de pagamento, onde preenche os dados de entrega e a forma de , e finaliza o pedido.
 
 ### 🧪 Testes
 
-As funcionalidades implementadas foram testadas utilizando **Jest, Jasmine e Cypress**, com um total de **37 testes** aprovados até o momento, sendo:
+As funcionalidades implementadas foram testadas utilizando **Jest, Jasmine e Cypress**, com um total de **38 testes** aprovados até o momento, sendo:
 - **Core**: 11 testes para as regras de negócio
-- **Front-end**: 17 testes, sendo 12 unitários e de integração, e 5 testes E2E.
+- **Front-end**: 18 testes, sendo 12 unitários e de integração, e 6 testes E2E.
 - **Backend**: 9 testes para todas as operações.
 
 ## 📦 Estrutura do Projeto
@@ -51,7 +52,7 @@ O Gam3r Store está sendo desenvolvido utilizando uma arquitetura **monorepo**, 
   - NestJS (em desenvolvimento)
   - Prisma (para interações com o banco de dados)
 - **Estilo**: Tailwind CSS
-- **Testes**: Jest, Cypress
+- **Testes**: Jest, Cypress, Jasmine
 - **Linguagem**: TypeScript
 
 ## 🌐 Deploy
@@ -97,13 +98,19 @@ yarn install
 
 ## 🌌 Interfaces
 ### Tela Inicial
-![Home](https://i.ibb.co/1Jfd2pv/Captura-de-tela-2024-10-30-142933.png)
+![Home](https://i.ibb.co/9VBsD6H/Captura-de-tela-2024-10-30-142933.png)
 
 ### Buscar Produto
-![Busca](https://i.ibb.co/vVgyw46/Captura-de-tela-2024-10-30-142946.png)
+![Busca](https://i.ibb.co/vZJ2nnp/Captura-de-tela-2024-10-30-142946.png)
 
 ### Carrinho
-![Carrinho](https://i.ibb.co/9rG2pwq/Captura-de-tela-2024-10-30-143008.png)
+![Carrinho](https://i.ibb.co/gv9nmkJ/Captura-de-tela-2024-11-04-160655.png)
+
+### Pagamento
+![Carrinho](https://i.ibb.co/9ypBmsW/Captura-de-tela-2024-11-04-160912.png)
+
+### Sucesso
+![Carrinho](https://i.ibb.co/30nRP0M/Captura-de-tela-2024-11-04-160933.png)
 
 ## 🧾 License
 Esse README fornece uma visão clara do estado atual do projeto, tecnologias utilizadas, desafios e funcionalidades planejadas, além de guiar outros desenvolvedores sobre como executar o projeto localmente.
