@@ -5,7 +5,7 @@
 ## 🚀 Visão Geral do Projeto
 
 - **Status**: Em desenvolvimento
-- **Versão Atual**: 2.7
+- **Versão Atual**: 2.8
 - **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma, Cypress, Jasmine
 
 ## 🔧 Funcionalidades Implementadas
