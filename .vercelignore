@@ -6,6 +6,8 @@
 *.cy.ts
 *.http
 *.txt
+**/cypress/
+**/coverage/
 **/node_modules/
-**/cypress/**
-**.angular/cache/
+**/.angular/cache/
+**/prisma/migrations/

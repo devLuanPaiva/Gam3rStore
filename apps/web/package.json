@@ -12,7 +12,7 @@
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "vercel-build": "npm run build && npm prune --production"
+    "vercel-build": "ng build --configuration production && npm prune --production"
   },
   "private": true,
   "dependencies": {
@@ -38,7 +38,7 @@
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.8",
+    "@angular-devkit/build-angular": "^18.2.11",
     "@angular/cli": "^18.2.8",
     "@angular/compiler-cli": "^18.2.0",
     "@cypress/schematic": "^2.5.2",
@@ -46,6 +46,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "autoprefixer": "^10.4.20",
+    "cypress": "latest",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -54,7 +55,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
-    "typescript": "~5.5.2",
-    "cypress": "latest"
+    "typescript": "~5.5.2"
   }
 }
