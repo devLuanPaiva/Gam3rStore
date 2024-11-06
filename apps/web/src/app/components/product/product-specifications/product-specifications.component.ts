@@ -15,7 +15,7 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
           [label]="product.specifications.highlight"
           [icon]="faTag"
           [outlined]="true"
-          ]
+          
         />
         <ul *ngFor="let key of productSpecifications">
           <li class="flex gap-1 list-none">
