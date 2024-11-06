@@ -1,0 +1,45 @@
+<section
+    class="flex flex-col border border-white/10 p-7 rounded-xl gap-4 bg-[#0e001d]">
+    <header class="flex items-center gap-2">
+        <fa-icon
+            [icon]="
+            percentage >= 40 && percentage < 60 
+            ? icons.faceMeh : percentage >= 60 
+            ? icons.faceSadTear : icons.faceSmile"
+            [ngClass]="{
+                'text-yellow-500' : percentage >= 40 && percentage < 60, 'text-red-500' : percentage >=60, 
+                'text-green-500': percentage < 40}"
+            size="2x" />
+        <div class="flex flex-col">
+            <p class="flex gap-1.5">
+                O preço do produto está
+                <strong [ngClass]="{
+                    'text-yellow-500' : percentage >= 40 && percentage < 60, 'text-red-500' : percentage >= 60, 
+                    'text-green-500': percentage < 40
+                }">
+                    {{
+                    percentage >= 40 && percentage < 60
+                    ? 'na média'
+                    : percentage >= 60
+                    ? 'acima da média'
+                    : 'abaixo da média'
+                    }}
+                </strong>
+            </p>
+            <p class="text-zinc-400 text-sm">
+                Com base no preço dos últimos <time
+                    class="text-white">30dias</time>.
+            </p>
+        </div>
+    </header>
+    <aside
+        class="flex items-center h-2 bg-gradient-to-r from-green-500 via-yellow-400 to-red-500 rounded-full relative border-2 border-black">
+        <div
+            class="absolute flex justify-center items-center h-4 w-4 bg-white rounded-full"
+            [ngStyle]="{left: percentage + '%'}">
+            <fa-icon [icon]="icons.chevronDown"
+                class="absolute text-white -mt-8" size="lg" />
+            <span class="h-2.5 w-2.5 bg-black rounded-full"></span>
+        </div>
+    </aside>
+</section>
