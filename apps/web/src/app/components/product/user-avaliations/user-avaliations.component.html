@@ -1,0 +1,26 @@
+<section class="flex flex-col gap-2">
+    <header class="flex items-center gap-2">
+      <span class="text-2xl">⭐</span>
+      <h2 class="text-2xl font-semibold">Avaliações dos Usuários</h2>
+    </header>
+    <p class="font-light text-zinc-300">
+      O produto é elogiado por seu desempenho, qualidade de som e praticidade. 
+      Os clientes destacam o bom custo-benefício, a qualidade do microfone embutido e a facilidade de instalação.
+      Alguns mencionam que o produto é ideal para jogos e que o desempenho é excelente, mesmo sem placa de vídeo dedicada.
+      Outros destacam a qualidade do som e o conforto do fone de ouvido.
+    </p>
+    <section class="flex items-center gap-5 mt-5">
+      <div class="flex flex-col gap-2 items-center">
+        <p class="text-7xl text-pink-600">{{ product.rating }}</p>
+        <app-item-review [rating]="product.rating" [size]="18"/>
+        <p class="font-light text-sm text-zinc-300">(198 Comentários)</p>
+      </div>
+      <aside class="flex-1 flex items-center bg-violet-dark/50 h-32 rounded-xl">
+        <ul class="flex flex-col list-disc px-10 gap-1">
+          <li>Desempenho excelente.</li>
+          <li>Custo benefício ótimo.</li>
+          <li>Gráfico dedicado.</li>
+        </ul>
+      </aside>
+    </section>
+  </section>
