@@ -13,9 +13,8 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
       'border border-violet-500 text-white': outlined,
       'bg-gradient-to-r from-violet-600 to-violet-700': !outlined,
     }"
-    ]
   >
-    <fa-icon [icon]="icon" />
+    <fa-icon [icon]="icon"></fa-icon>
     {{ label }}
   </figure>`,
 })
