@@ -1,7 +1,7 @@
 <article
     class="flex text-white flex-col bg-[#0e001d] border border-white/10 rounded-xl relative max-w-[350px] min-h-[490px] md:h-[456px]">
     <div class="absolute flex z-10 justify-end top-2.5 right-2.5">
-        <app-item-review [rating]="product.rating" />
+        <app-item-review [rating]="product.rating"  [className]="'flex-col'" />
     </div>
     <figure class="w-full h-48 relative flex items-center justify-center">
         <img [src]="product.image" [alt]="product.name"
