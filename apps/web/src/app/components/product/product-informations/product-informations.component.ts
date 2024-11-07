@@ -7,16 +7,12 @@ import { ProductSpecificationsComponent } from '../product-specifications/produc
   imports: [ProductSpecificationsComponent],
   template: `
     <section
-      class="flex flex-col sm:flex-row items-center bg-[#0e001d] rounded-xl p-5 "
+      class="flex items-center bg-[#0e001d] rounded-xl"
     >
-      <figure class="flex-1 relative flex justify-center h-60 sm:h-96">
-        <img
-          [src]="product.image"
-          [alt]="product.name"
-          class="object-cover p-7"
-          fill
-        />
-      </figure>
+    <figure class="w-2/3  relative flex items-center justify-center">
+        <img [src]="product.image" [alt]="product.name"
+            class="object-contain max-w-full max-h-full" />
+    </figure>
       <app-product-specifications [product]="product" />
     </section>
   `,
