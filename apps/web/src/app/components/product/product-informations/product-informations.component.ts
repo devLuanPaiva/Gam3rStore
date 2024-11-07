@@ -6,15 +6,15 @@ import { ProductSpecificationsComponent } from '../product-specifications/produc
   standalone: true,
   imports: [ProductSpecificationsComponent],
   template: `
-    <section
-      class="flex items-center bg-[#0e001d] rounded-xl"
+    <article
+      class="w-full flex flex-col py-3 sm:flex-row items-center justify-around bg-[#0e001d] rounded-xl space-y-5 sm:space-x-0"
     >
-    <figure class="w-2/3  relative flex items-center justify-center">
+      <figure class="w-44 h-36 sm:h-36 md:h-auto sm:w-1/2 relative flex items-center justify-center">
         <img [src]="product.image" [alt]="product.name"
-            class="object-contain max-w-full max-h-full" />
-    </figure>
+            class="object-contain" />
+      </figure>
       <app-product-specifications [product]="product" />
-    </section>
+    </article>
   `,
 })
 export class ProductInformationsComponent {

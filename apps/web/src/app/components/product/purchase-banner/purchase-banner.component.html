@@ -1,21 +1,23 @@
-<section class="flex">
-    <div class="flex flex-col border-r border-zinc-500 pr-5">
-        <p class="line-through text-zinc-400">de {{product.basePrice | currency:
-            'BRL'}}
+<section class="flex flex-col gap-3">
+    <section class="flex-1 flex items-center">
+        <div class="flex flex-col border-r border-zinc-500 pr-5">
+            <p class="line-through text-zinc-400">de {{product.basePrice | currency:
+                'BRL'}}
+            </p>
+            <p class="text-2xl font-semibold">
+                <span class="text-base text-zinc-300">por</span>
+                <span class="text-emerald-500">{{product.promotionalPrice |
+                    currency: 'BRL'}}
+                </span>
+                <span className="text-base text-zinc-300">à vista</span>
+            </p>
+        </div>
+        <p class="flex flex-col text-2xl font-semibold text-zinc-400 pl-5">
+            <span class="text-base text-zinc-300">até
+                {{installmentDetails.numberOfInstallments}}x de </span>
+            {{installmentDetails.installmentValue | currency: 'BRL'}}
         </p>
-        <p class="text-2xl font-semibold">
-            <span class="text-base text-zinc-300">por</span>
-            <span class="text-emerald-500">{{product.promotionalPrice |
-                currency: 'BRL'}}
-            </span>
-            <span className="text-base text-zinc-300">à vista</span>
-        </p>
-    </div>
-    <p class="flex-1 flex flex-col text-2xl font-semibold text-zinc-400 pl-5">
-        <span class="text-base text-zinc-300">até
-            {{installmentDetails.numberOfInstallments}}x de </span>
-        {{installmentDetails.installmentValue | currency: 'BRL'}}
-    </p>
+    </section>
     <div class="flex gap-2 items-center">
         <button class="flex-1 button bg-pink-600" (click)="addItem(product)">
             <fa-icon [icon]="icons.cartShopping" /> Adicionar

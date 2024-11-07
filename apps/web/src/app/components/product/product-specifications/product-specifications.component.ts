@@ -9,21 +9,28 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
   standalone: true,
   imports: [CommonModule, TagsComponent, FontAwesomeModule],
   template: `
-    <article class="flex-1 flex flex-col gap-1">
-      <div class="flex mb-3 items-center justify-center">
+    <section class="flex flex-col">
+      <div class="flex w-full items-center justify-center mb-2 sm:mb-3">
         <app-tags
           [label]="product.specifications.highlight"
           [icon]="faTag"
           [outlined]="true"
         />
       </div>
-      <ul *ngFor="let key of productSpecifications" class="flex gap-1">
-        <span class="p-2 w-2/5 flex items-center text-center justify-center bg-white/5 rounded">{{ key }}</span>
-        <span class="p-2 w-2/5 flex items-center text-center justify-center bg-white/5 rounded"
+      <ul
+        *ngFor="let key of productSpecifications"
+        class="flex w-full gap-1 sm:gap-2 mb-1 sm:mb-2"
+      >
+        <span
+          class="p-2 w-1/2  items-center text-center justify-center bg-white/5 rounded"
+          >{{ key }}</span
+        >
+        <span
+          class="p-2 w-1/2  items-center text-center justify-center bg-white/5 rounded"
           >{{ product.specifications[key] }}
         </span>
       </ul>
-    </article>
+    </section>
   `,
 })
 export class ProductSpecificationsComponent {
