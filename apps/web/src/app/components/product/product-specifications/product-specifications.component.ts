@@ -10,22 +10,19 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
   imports: [CommonModule, TagsComponent, FontAwesomeModule],
   template: `
     <article class="flex-1 flex flex-col gap-1">
-      <div class="flex mb-3">
+      <div class="flex mb-3 items-center justify-center">
         <app-tags
           [label]="product.specifications.highlight"
           [icon]="faTag"
           [outlined]="true"
-          
         />
-        <ul *ngFor="let key of productSpecifications">
-          <li class="flex gap-1 list-none">
-            <span class="p-2 w-1/3 bg-white/5 rounded">{{ key }}</span>
-            <span class="p-2 w-1/3 bg-white/5 rounded"
-              >{{ product.specifications[key] }}
-            </span>
-          </li>
-        </ul>
       </div>
+      <ul *ngFor="let key of productSpecifications" class="flex gap-1">
+        <span class="p-2 w-2/5 flex items-center text-center justify-center bg-white/5 rounded">{{ key }}</span>
+        <span class="p-2 w-2/5 flex items-center text-center justify-center bg-white/5 rounded"
+          >{{ product.specifications[key] }}
+        </span>
+      </ul>
     </article>
   `,
 })
@@ -33,8 +30,10 @@ export class ProductSpecificationsComponent {
   @Input() product!: IProduct;
   faTag = faTag;
   get productSpecifications() {
-    return Object.keys(this.product.specifications || {}).filter(
-      (key) => key !== 'highlight',
-    );
+    return this.product.specifications
+      ? Object.keys(this.product.specifications).filter(
+          (k) => k !== 'highlight',
+        )
+      : [];
   }
 }
