@@ -5,7 +5,7 @@ import { IProduct } from '@gstore/core';
   standalone: true,
   imports: [],
   template: `
-    <section class="flex flex-col">
+    <section class="flex flex-col space-y-2">
       <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl">
         {{ product.name }}
       </h1>
