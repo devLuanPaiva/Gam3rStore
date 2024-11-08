@@ -22,11 +22,11 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
         class="flex w-full gap-1 sm:gap-2 mb-1 sm:mb-2"
       >
         <span
-          class="p-2 w-1/2  items-center text-center justify-center bg-white/5 rounded"
+          class="p-2 w-1/2 flex text-xs sm:text-sm md:text-lg items-center text-center justify-center bg-white/5 rounded"
           >{{ key }}</span
         >
         <span
-          class="p-2 w-1/2  items-center text-center justify-center bg-white/5 rounded"
+          class="p-2 w-1/2 flex text-xs sm:text-sm md:text-lg items-center text-center justify-center bg-white/5 rounded"
           >{{ product.specifications[key] }}
         </span>
       </ul>

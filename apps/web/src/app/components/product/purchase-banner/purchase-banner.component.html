@@ -1,28 +1,28 @@
-<section class="flex flex-col gap-3">
+<section class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
     <section class="flex-1 flex items-center">
         <div class="flex flex-col border-r border-zinc-500 pr-5">
             <p class="line-through text-zinc-400">de {{product.basePrice | currency:
                 'BRL'}}
             </p>
-            <p class="text-2xl font-semibold">
-                <span class="text-base text-zinc-300">por</span>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
+                <span class="text-xs sm:text-sm md:text-lg text-zinc-300"> por </span>
                 <span class="text-emerald-500">{{product.promotionalPrice |
                     currency: 'BRL'}}
                 </span>
                 <span className="text-base text-zinc-300">à vista</span>
             </p>
         </div>
-        <p class="flex flex-col text-2xl font-semibold text-zinc-400 pl-5">
-            <span class="text-base text-zinc-300">até
+        <p class="flex flex-col text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-zinc-400 pl-5">
+            <span class="text-xs sm:text-sm md:text-lg text-zinc-300">até
                 {{installmentDetails.numberOfInstallments}}x de </span>
             {{installmentDetails.installmentValue | currency: 'BRL'}}
         </p>
     </section>
     <div class="flex gap-2 items-center">
-        <button class="flex-1 button bg-pink-600" (click)="addItem(product)">
+        <button class=" button bg-pink-600" (click)="addItem(product)">
             <fa-icon [icon]="icons.cartShopping" /> Adicionar
         </button>
-        <button class="flex-1 button bg-violet-700" (click)="addItem(product)" [routerLink]="['/cart/payment']">
+        <button class=" button bg-violet-700" (click)="addItem(product)" [routerLink]="['/cart/payment']">
             <fa-icon [icon]="icons.creditCard" /> Comprar
         </button>
     </div>

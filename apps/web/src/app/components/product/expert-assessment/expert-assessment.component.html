@@ -1,15 +1,15 @@
 <section class="flex flex-col space-y-3">
   <header class="flex flex-col gap-2">
     <div class="flex items-center gap-2">
-      <span class="text-3xl">🎯</span>
-      <h2 class="text-2xl font-semibold">Avaliação Especializada</h2>
+      <span class="text-base sm:text-lg md:text-xl lg:text-2xl">🎯</span>
+      <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">Avaliação Especializada</h2>
     </div>
-    <p class="font-light text-zinc-300 text-justify indent-8">
+    <p class="text-xs sm:text-sm md:text-lg font-light text-zinc-300 text-justify indent-8">
       As avaliações que apresentamos não são desenvolvidos por nós, mas sim por canais especializados em tecnologia, 
       que trazem uma análise aprofundada e imparcial dos produtos.
     </p>
   </header>
-  <section class="relative sm:h-[350px] md:h-[400px] lg:h-[500px] max-w" aria-label="Avaliação em vídeo">
+  <section class="relative h-[290px] sm:h-[350px] md:h-[400px] lg:h-[500px] max-w" aria-label="Avaliação em vídeo">
     <iframe
       class="absolute inset-0 w-full h-full"
       [src]="sanitizedVideoReviewUrl"
