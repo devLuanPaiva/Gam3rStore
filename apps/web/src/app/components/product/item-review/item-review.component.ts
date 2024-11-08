@@ -12,7 +12,7 @@ import { SizeProp } from '@fortawesome/fontawesome-svg-core';
   standalone: true,
   imports: [FontAwesomeModule, CommonModule],
   template: `
-    <figure class="flex flex-col gap-0.5 text-emerald-400">
+    <figure [ngClass]="'flex gap-0.5 text-emerald-400 ' + className">
       <ng-container *ngFor="let star of stars">
         <fa-icon [icon]="star.icon" [size]="fontAwesomeSize" />
       </ng-container>
@@ -22,6 +22,7 @@ import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 export class ItemReviewComponent {
   @Input() rating!: number;
   @Input() size?: number;
+  @Input() className?: string;
 
   get fontAwesomeSize(): SizeProp {
     switch (this.size) {
