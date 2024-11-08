@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IInstallment, IProduct } from '@gstore/core';
 import { CartService } from '../../../services/cart.service';
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   imports: [RouterModule, FontAwesomeModule, CommonModule],
   templateUrl: './purchase-banner.component.html',
 })
-export class PurchaseBannerComponent {
+export class PurchaseBannerComponent implements OnChanges {
   @Input() product!: IProduct;
   installmentDetails!: IInstallment;
   icons = {
