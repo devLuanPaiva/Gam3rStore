@@ -36,9 +36,9 @@ Até o momento, foram desenvolvidas e testadas:
 
 ### 🧪 Testes
 
-As funcionalidades implementadas foram testadas utilizando **Jest, Jasmine e Cypress**, com um total de **39 testes** aprovados até o momento, sendo:
+As funcionalidades implementadas foram testadas utilizando **Jest, Jasmine e Cypress**, com um total de **45 testes** aprovados até o momento, sendo:
 - **Core**: 11 testes para as regras de negócio
-- **Front-end**: 19 testes, sendo 12 unitários e de integração, e 7 testes E2E.
+- **Front-end**: 23 testes, sendo 16 unitários e de integração, e 7 testes E2E.
 - **Backend**: 9 testes para todas as operações.
 
 ## 📦 Estrutura do Projeto
