@@ -10,7 +10,6 @@ import { MeterOfPriceComponent } from '../../components/product/meter-of-price/m
 import { UserAvaliationsComponent } from '../../components/product/user-avaliations/user-avaliations.component';
 import { ExpertAssessmentComponent } from '../../components/product/expert-assessment/expert-assessment.component';
 import { ProductNotFoundComponent } from '../../components/product/product-not-found/product-not-found.component';
-import { IProduct } from '@gstore/core';
 import { mockProducts } from '../../services/product.mock';
 
 describe('ProductComponent', () => {
@@ -68,5 +67,12 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
     const productInformationsComponent = fixture.debugElement.nativeElement.querySelector('app-product-informations');
     expect(productInformationsComponent).toBeTruthy();
+  });
+  it('should display product not found component if product$ is null', () => {
+    productService.productById.and.returnValue(of(null));
+    component.ngOnInit();
+    fixture.detectChanges();
+    const productNotFoundComponent = fixture.debugElement.nativeElement.querySelector('app-product-not-found');
+    expect(productNotFoundComponent).toBeTruthy();
   });
 });
