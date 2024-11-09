@@ -31,8 +31,9 @@ export class ProductService {
   setSearch(search: string): void {
     this.searchSubject.next(search);
   }
-  productById(id: number): IProduct | null {
-    const products = this.productsSubject.getValue();
-    return products.find((product) => product.id === id) ?? null;
+  productById(id: number): Observable<IProduct | null> {
+    return this.apiService
+      .httpGet(`products/getById/${id}`)
+      .pipe(map((product) => product ?? null));
   }
 }

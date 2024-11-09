@@ -20,4 +20,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/success/success.module').then((m) => m.SuccessModule),
   },
+  {
+    path: 'product/:id',
+    loadChildren: () =>
+      import('./pages/product/product.module').then((m) => m.ProductModule),
+  },
 ];
