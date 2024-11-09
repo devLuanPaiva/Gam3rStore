@@ -22,7 +22,7 @@ describe('ProductComponent', () => {
     const productServiceSpy = jasmine.createSpyObj('ProductService', [
       'productById',
     ]);
-    productServiceSpy.productById.and.returnValue(of(mockProducts[0])); 
+    productServiceSpy.productById.and.returnValue(of(mockProducts[0]));
     TestBed.configureTestingModule({
       imports: [
         ProductComponent,
@@ -56,7 +56,12 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
   });
   it('should call productService.productById on init and set product$', waitForAsync(() => {
-    expect(productService.productById).toHaveBeenCalledOnceWith(1); 
+    expect(productService.productById).toHaveBeenCalledOnceWith(1);
   }));
-
+  it('should display product title component with correct input', () => {
+    fixture.detectChanges();
+    const productTitleComponent =
+      fixture.debugElement.nativeElement.querySelector('app-product-title');
+    expect(productTitleComponent).toBeTruthy();
+  });
 });
