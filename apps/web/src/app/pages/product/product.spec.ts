@@ -64,4 +64,9 @@ describe('ProductComponent', () => {
       fixture.debugElement.nativeElement.querySelector('app-product-title');
     expect(productTitleComponent).toBeTruthy();
   });
+  it('should display product informations component with correct input', () => {
+    fixture.detectChanges();
+    const productInformationsComponent = fixture.debugElement.nativeElement.querySelector('app-product-informations');
+    expect(productInformationsComponent).toBeTruthy();
+  });
 });
