@@ -5,7 +5,7 @@
 ## 🚀 Visão Geral do Projeto
 
 - **Status**: Em desenvolvimento
-- **Versão Atual**: 2.8
+- **Versão Atual**: 3.0
 - **Tecnologias Principais**: Turborepo, Angular, NestJS, React Native, Prisma, Tailwind CSS, Jest, TypeScript, GitFlow, Karma, Cypress, Jasmine
 
 ## 🔧 Funcionalidades Implementadas
@@ -32,12 +32,13 @@ Até o momento, foram desenvolvidas e testadas:
 - **Filtrar Produtos**: Friltragem de todos os produtos, onde o usuário insere o nome do produto no campo de busca e assim é filtrado.
 - **Carrinho**: O usuário pode inserir quantos produtos quiser no carrinho, aumentar e diminuir a quantidade, e remover produto.
 - **Pagamento**: Após fechar o carrinho, o usuário vai para a tela de pagamento, onde preenche os dados de entrega e a forma de , e finaliza o pedido.
+- **Especificações do Produto**: O usuário pode visualizar mais detalhes de um produto em especifico, como descição, especificações, metragem de preço, avaliações de usuários e uma avaliação em video sobre o mesmo.
 
 ### 🧪 Testes
 
-As funcionalidades implementadas foram testadas utilizando **Jest, Jasmine e Cypress**, com um total de **38 testes** aprovados até o momento, sendo:
+As funcionalidades implementadas foram testadas utilizando **Jest, Jasmine e Cypress**, com um total de **39 testes** aprovados até o momento, sendo:
 - **Core**: 11 testes para as regras de negócio
-- **Front-end**: 18 testes, sendo 12 unitários e de integração, e 6 testes E2E.
+- **Front-end**: 19 testes, sendo 12 unitários e de integração, e 7 testes E2E.
 - **Backend**: 9 testes para todas as operações.
 
 ## 📦 Estrutura do Projeto
@@ -95,6 +96,20 @@ yarn install
 ```
 5. Abra o navegador e acesse `http://localhost:3000`, ou baixe o app [ExpoGo](https://expo.dev/go) para acessar a versão mobile em seu smartphone.
 
+## 🎲 Tutorial de Uso
+
+### Adicionar Produto ao Carrinho
+- Na tela inicial, cada card de produto possui um botão "Adicionar". Basta clicar nesse botão para adicionar o produto ao carrinho.
+
+### Visualizar Carrinho
+- No cabeçalho do site, há um ícone de carrinho. Clique nesse ícone para acessar a página do carrinho e visualizar os itens adicionados.
+
+### Página de Pagamento
+- Na página do carrinho, há um passo (step) com a opção de "Pagamento". Nesse passo, um card mostra o preço total e um botão "Continuar". Clique no botão para prosseguir para o pagamento.
+
+### Especificações do Produto
+- Para visualizar as especificações do produto, clique no título do produto. Esse recurso está disponível tanto nos cards da tela inicial quanto nos cards da página do carrinho.
+
 
 ## 🌌 Interfaces
 ### Tela Inicial
@@ -111,6 +126,9 @@ yarn install
 
 ### Sucesso
 ![Carrinho](https://i.ibb.co/30nRP0M/Captura-de-tela-2024-11-04-160933.png)
+
+### Especificações do Produto
+![Especificações](https://i.ibb.co/WN92RzT/Captura-de-tela-2024-11-08-163649.png)
 
 ## 🧾 License
 Esse README fornece uma visão clara do estado atual do projeto, tecnologias utilizadas, desafios e funcionalidades planejadas, além de guiar outros desenvolvedores sobre como executar o projeto localmente.
