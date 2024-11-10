@@ -3,5 +3,5 @@ export interface ProductContextProps {
   products: IProduct[];
   search: string;
   setSearch: (search: string) => void;
-  productById: (id: number) => IProduct | null;
+  productById: (id: number) => Promise<IProduct | null>;
 }
