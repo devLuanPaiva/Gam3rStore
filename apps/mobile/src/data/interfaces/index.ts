@@ -1,2 +1,3 @@
 export * from './productContextProps.interface'
-export * from './ReviewProps.interface'
+export * from './itemProduct.interface'
+export * from './reviewProps.interface'
