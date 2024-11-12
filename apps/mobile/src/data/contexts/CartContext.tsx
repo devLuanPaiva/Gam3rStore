@@ -52,3 +52,4 @@ export function CartProvider(props: any) {
         </CartContext.Provider>
     )
 }
+export default CartContext
