@@ -1,4 +1,5 @@
 export * from './productContextProps.interface'
+export * from './paymentContextProps.interface'
 export * from './cartContextProps.interface'
 export * from './itemProduct.interface'
 export * from './reviewProps.interface'
