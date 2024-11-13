@@ -1,3 +1,4 @@
+export * from './selectPaymentMethod.interface'
 export * from './productContextProps.interface'
 export * from './paymentContextProps.interface'
 export * from './cartContextProps.interface'
