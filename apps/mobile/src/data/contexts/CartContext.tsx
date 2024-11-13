@@ -8,7 +8,7 @@ import { CartContextProps } from "../interfaces";
 const CartContext = createContext<CartContextProps>({} as CartContextProps);
 
 export function CartProvider(props: any) {
-    const { salveItem, getItem } = useLocalStorage()
+    const { saveItem, getItem } = useLocalStorage()
     const [cart, setCart] = useState<Cart>(new Cart())
 
     const addItem = (product: IProduct) => {
@@ -24,7 +24,7 @@ export function CartProvider(props: any) {
         updateCart(cart.clear())
     }
     const updateCart = (cart: Cart) => {
-        salveItem('cart', cart.items)
+        saveItem('cart', cart.items)
         setCart(cart)
     }
     useEffect(() => {
