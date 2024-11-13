@@ -1,6 +1,6 @@
 import useLocalStorage from "../hooks/useLocalStorage";
 import {
-    IProduct, IInstallment, ICartItem, Cart, CalculateInstallment
+    IProduct, ICartItem, Cart, CalculateInstallment
 } from "@gstore/core";
 import { createContext, useEffect, useMemo, useState } from 'react'
 import { CartContextProps } from "../interfaces";
