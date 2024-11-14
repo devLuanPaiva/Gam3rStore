@@ -4,8 +4,12 @@ import Colors from "@/src/data/constants/Colors";
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Review from "../shared/Review";
 import { Ionicons } from "@expo/vector-icons";
+import useInstallment from "@/src/data/hooks/useInstallment";
+import useCart from "@/src/data/hooks/useCart";
 
 export default function ItemProduct(props: Readonly<ItemProductProps>) {
+    const { addItem } = useCart()
+    const installment = useInstallment(props.product.promotionalPrice)
     return (
         <View style={styles.container}>
             <Pressable style={styles.product}>
@@ -31,14 +35,17 @@ export default function ItemProduct(props: Readonly<ItemProductProps>) {
                         </Text>
                     </View>
                     <Text style={styles.installment}>
-                        ou 12x de {(props.product.promotionalPrice / 12).toLocaleString("pt-br", {
+                        ou {installment.numberOfInstallments}x de {installment.installmentValue.toLocaleString("pt-br", {
                             style: "currency",
                             currency: "BRL",
                         })}
                     </Text>
                 </View>
             </Pressable>
-            <Pressable style={styles.buttom}>
+            <Pressable style={styles.buttom} onPress={(e) => {
+                e.preventDefault()
+                addItem(props.product)
+            }}>
                 <Ionicons name="cart-outline" size={22} style={styles.buttomText} />
                 <Text style={styles.buttomText}>Adicionar</Text>
             </Pressable>
@@ -46,7 +53,7 @@ export default function ItemProduct(props: Readonly<ItemProductProps>) {
                 colors={['transparent', '#7811F5', 'transparent']}
                 start={{ x: 0, y: 0.75 }}
                 end={{ x: 1, y: 0.25 }}
-                style={styles.borderBottom} 
+                style={styles.borderBottom}
             />
         </View>
     )
