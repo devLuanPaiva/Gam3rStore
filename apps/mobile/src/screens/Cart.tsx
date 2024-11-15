@@ -5,6 +5,7 @@ import { ICartItem } from "@gstore/core";
 import CartItem from "../components/cart/CartItem";
 import Colors from "../data/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import HeaderSteps from "../components/shared/HeaderSteps";
 
 export default function Cart({ navigation }: any) {
     const { addItem, items, removeProduct, removeItem } = useCart()
@@ -13,6 +14,7 @@ export default function Cart({ navigation }: any) {
         <SafeAreaView style={styles.container}>
             {items.length > 0 ? (
                 <>
+                    <HeaderSteps step="cart" />
                     <ScrollView contentContainerStyle={{ paddingTop: 20, paddingVertical: 20, width: '100%' }}>
                         {items.map((item: ICartItem) => (
                             <CartItem
