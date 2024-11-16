@@ -1,6 +1,6 @@
 import { ReviewProps } from "@/src/data/interfaces";
 import { Ionicons } from '@expo/vector-icons'
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Review(props: Readonly<ReviewProps>) {
     const Stars = (note: number) => {
@@ -22,7 +22,7 @@ export default function Review(props: Readonly<ReviewProps>) {
         }
         return stars
     }
-    return <View style={styles.container}> {Stars(props.note)} </View>
+    return <Text style={styles.container}> {Stars(props.note)} </Text>
 }
 const styles = StyleSheet.create({
     container: {

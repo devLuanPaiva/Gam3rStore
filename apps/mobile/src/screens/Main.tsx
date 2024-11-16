@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { StyleSheet, Text, View } from 'react-native'
 import Home from './Home'
+import Cart from './Cart'
 const Tab = createBottomTabNavigator()
 export default function Main() {
     const tab = (name: string, component: any, label: string, icon: string) => {
@@ -33,6 +34,7 @@ export default function Main() {
             },
         }}>
             {tab('Home', Home, 'Home', 'home-outline')}
+            {tab('Cart', Cart, 'Cart', 'cart-outline')}
         </Tab.Navigator>
     )
 }
