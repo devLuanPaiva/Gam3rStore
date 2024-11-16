@@ -7,9 +7,9 @@ export default function useLocalStorage() {
     return localValue ? JSON.parse(localValue) : null;
   }, []);
 
-  const salveItem = useCallback(async (key: string, value: any) => {
+  const saveItem = useCallback(async (key: string, value: any) => {
     await AsyncStorage.setItem(key, JSON.stringify(value));
   }, []);
 
-  return { getItem, salveItem };
+  return { getItem, saveItem };
 }
