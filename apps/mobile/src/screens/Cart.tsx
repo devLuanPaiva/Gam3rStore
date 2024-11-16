@@ -29,7 +29,7 @@ export default function Cart({ navigation }: any) {
                     <Pressable
                         style={styles.buttom}
                         onPress={() => {
-                            navigation.navigate('Pagamento')
+                            navigation.navigate('Payment')
                         }}
                     >
                         <Ionicons name="card-outline" size={22} style={styles.buttomText} />
