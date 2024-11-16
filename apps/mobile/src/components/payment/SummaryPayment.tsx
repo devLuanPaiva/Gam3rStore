@@ -6,13 +6,16 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 export default function SummaryPayment(props: Readonly<SummaryPaymentProps>) {
     return (
         <View style={styles.container}>
-            <View style={styles.itemsValue}>
-                <Text style={{ color: 'white' }}>Valor total ({props.ammountItems} itens): </Text>
-                <Text style={styles.itemsValueHighlight}> {props.totalValue.toLocaleString("pt-br", {
+            <Text style={{ color: 'white' }}>
+                Valor total ({props.ammountItems} itens):
+            </Text>
+            <Text style={styles.itemsValueHighlight}>
+                {props.totalValue.toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
-                })} </Text>
-            </View>
+                })}
+            </Text>
+
             <Pressable style={styles.buttom} onPress={() => props.finalizePurchase?.()}>
                 <Ionicons name="cart-outline" size={22} style={styles.textButtom} />
                 <Text style={styles.textButtom}>Finalizar Compra</Text>
