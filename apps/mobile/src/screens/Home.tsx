@@ -8,7 +8,7 @@ export default function Home({ navigation }: any) {
         <SafeAreaView style={styles.container} >
             <ScrollView contentContainerStyle={{ paddingVertical: 20, paddingTop: 20, width: '100%' }} >
                 {products.map((product) => (
-                    <ItemProduct key={product.id} product={product} selectProduct={navigation.navigate('')} />
+                    <ItemProduct key={product.id} product={product} />
                 ))}
             </ScrollView>
         </SafeAreaView>
