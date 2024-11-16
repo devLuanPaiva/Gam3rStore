@@ -13,27 +13,27 @@ export default function ItemProduct(props: Readonly<ItemProductProps>) {
     return (
         <View style={styles.container}>
             <Pressable style={styles.product}>
-                <Image src={props.product.image} style={styles.image} alt={props.product.name} />
+                <Image source={{uri: props.product.image}} style={styles.image} alt={props.product.name} />
                 <View style={{ flex: 1 }}>
                     <View style={styles.reviewContainer}>
                         <Review note={props.product.rating} />
                     </View>
-                    <Text style={styles.name}> {props.product.name} </Text>
+                    <Text style={styles.name}>{props.product.name}</Text>
                     <Text style={styles.fullPrice}>
-                        de {props.product.basePrice.toLocaleString("pt-br", {
+                        de{' '}
+                        {props.product.basePrice.toLocaleString("pt-br", {
                             style: "currency",
                             currency: "BRL",
                         })}
                     </Text>
-                    <View style={styles.priceContainer} >
-                        <Text style={{ color: 'white' }} > por </Text>
-                        <Text style={styles.price}>
-                            {props.product.promotionalPrice.toLocaleString("pt-br", {
-                                style: "currency",
-                                currency: "BRL",
-                            })}
-                        </Text>
-                    </View>
+                    <Text style={{ color: 'white' }}>por</Text>
+                    <Text style={styles.price}>
+                        {props.product.promotionalPrice.toLocaleString("pt-br", {
+                            style: "currency",
+                            currency: "BRL",
+                        })}
+                    </Text>
+
                     <Text style={styles.installment}>
                         ou {installment.numberOfInstallments}x de {installment.installmentValue.toLocaleString("pt-br", {
                             style: "currency",
