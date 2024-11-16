@@ -1,8 +1,8 @@
-import { SelectPaymentMethod } from "@/src/data/interfaces";
+import { SelectPaymentMethodProps } from "@/src/data/interfaces";
 import { EPaymentMethod } from "@gstore/core";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function SelectPaymentMethod(props: Readonly<SelectPaymentMethod>){
+export default function SelectPaymentMethod(props: Readonly<SelectPaymentMethodProps>){
     const renderItem = (label: string, paymentMethod: EPaymentMethod) =>{
         const selected = props.paymentMethod === paymentMethod
         return (
