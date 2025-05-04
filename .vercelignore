@@ -11,3 +11,5 @@
 **/node_modules/
 **/.angular/cache/
 **/prisma/migrations/
+/apps/mobile
+/apps/mobile/*
